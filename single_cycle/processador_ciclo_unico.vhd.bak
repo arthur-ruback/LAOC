@@ -14,7 +14,7 @@ entity processador_ciclo_unico is
   generic (
     DATA_WIDTH : natural := 16; -- tamanho do barramento de dados em bits
     PROC_INSTR_WIDTH : natural := 16; -- tamanho da instrução do processador em bits
-    PROC_ADDR_WIDTH : natural := 16; -- tamanho do endereço da memória de programa do processador em bits
+    PROC_ADDR_WIDTH : natural := 11; -- tamanho do endereço da memória de programa do processador em bits
     DP_CTRL_BUS_WIDTH : natural := 17 -- tamanho do barramento de controle em bits
   );
   port (
@@ -31,7 +31,7 @@ architecture comportamento of processador_ciclo_unico is
   component via_de_dados_ciclo_unico is
     generic (
       -- declare todos os tamanhos dos barramentos (sinais) das portas da sua via_dados_ciclo_unico aqui.
-      DP_CTRL_BUS_WIDTH : natural := 17; -- tamanho do barramento de controle da via de dados (DP) em bits
+      DP_CTRL_BUS_WIDTH : natural := 5; -- tamanho do barramento de controle da via de dados (DP) em bits
       DATA_WIDTH : natural := 16; -- tamanho do dado em bits
       PC_WIDTH : natural := 16; -- tamanho da entrada de endereços da MI ou MP em bits (memi.vhd)
       FR_ADDR_WIDTH : natural := 4; -- tamanho da linha de endereços do banco de registradores em bits
@@ -44,7 +44,9 @@ architecture comportamento of processador_ciclo_unico is
       controle : in std_logic_vector (DP_CTRL_BUS_WIDTH - 1 downto 0);
       instrucao : in std_logic_vector (INSTR_WIDTH - 1 downto 0);
       pc_out : out std_logic_vector (PC_WIDTH - 1 downto 0);
-      saida : out std_logic_vector (DATA_WIDTH - 1 downto 0)
+      saida : out std_logic_vector (DATA_WIDTH - 1 downto 0);
+      zero : out std_logic;
+      negativo : out std_logic
     );
   end component;
 
@@ -52,7 +54,8 @@ architecture comportamento of processador_ciclo_unico is
     generic (
       INSTR_WIDTH : natural := 16;
       OPCODE_WIDTH : natural := 5;
-      DP_CTRL_BUS_WIDTH : natural := 17;
+	  -- TODO:
+      DP_CTRL_BUS_WIDTH : natural := 2222; -- WE RW UL UL UL UL ????????????
       ULA_CTRL_WIDTH : natural := 3
     );
     port (
@@ -101,7 +104,7 @@ begin
   port map(
     clk => Clock,
     reset => Chave_reset,
-    Endereco => aux_endereco(10 downto 0),
+    Endereco => aux_endereco,
     Instrucao => aux_instrucao
   );
 

@@ -124,7 +124,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
     );
   end component;
 
-  component extensor is
+  component extender is
     port (
       entrada_Rs : in std_logic_vector(10 downto 0);
       saida : out std_logic_vector((data_width - 1) downto 0)
@@ -334,7 +334,7 @@ begin
     reset => reset
   );
 
-  extensor1 : extensor
+  extensor1 : extender
   port map(
     entrada_Rs => aux_in_sign_ext,
     saida => aux_signExt_out

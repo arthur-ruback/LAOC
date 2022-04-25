@@ -45,20 +45,20 @@ begin
     begin
         case opcode is
                 -- NAND	
-            when "00000" =>
-                ctrl_aux <= "00000000000000000";
+            when "0000" =>
+                ctrl_aux <= "110000";
                 -- OR
-            when "00001" =>
-                ctrl_aux <= "00000000000000000";
+            when "0001" =>
+                ctrl_aux <= "110001";
                 -- ADD
-            when "00010" =>
-                ctrl_aux <= "00000000000000000";
+            when "0010" =>
+                ctrl_aux <= "110010";
                 -- SUB	
-            when "00100" =>
-                ctrl_aux <= "00000000000000000";
+            when "0100" =>
+                ctrl_aux <= "110100";
                 -- XOR
-            when "01100" =>
-                ctrl_aux <= "00000000000000000";
+            when "1100" =>
+                ctrl_aux <= "111100";
             when others =>
                 ctrl_aux <= (others => '0');
         end case;
