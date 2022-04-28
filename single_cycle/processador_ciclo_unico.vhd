@@ -5,7 +5,7 @@
 
 -- Processador de Ciclo Único 
 -- UFMG
--- Arthur Coelho e Gabriel Pimenta
+-- Arthur Coelho e Gabriel Pimentel
 
 library IEEE;
 use IEEE.std_logic_1164.all;
