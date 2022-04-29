@@ -24,7 +24,8 @@ entity via_de_dados_ciclo_unico is
     controle : in std_logic_vector(dp_ctrl_bus_width - 1 downto 0);
     instrucao : in std_logic_vector(instr_width - 1 downto 0);
     pc_out : out std_logic_vector(pc_width - 1 downto 0);
-    saida : out std_logic_vector(data_width - 1 downto 0)
+    saida : out std_logic_vector(data_width - 1 downto 0);
+    flag_zero : out std_logic
   );
 end entity via_de_dados_ciclo_unico;
 
@@ -93,7 +94,8 @@ architecture comportamento of via_de_dados_ciclo_unico is
       entrada_b : in std_logic_vector((largura_dado - 1) downto 0);
       seletor : in std_logic_vector(2 downto 0);
       saida_hi : out std_logic_vector((largura_dado - 1) downto 0);
-      saida_lo : out std_logic_vector((largura_dado - 1) downto 0)
+      saida_lo : out std_logic_vector((largura_dado - 1) downto 0);
+      flag_zero : out std_logic
     );
   end component;
 
@@ -167,6 +169,8 @@ architecture comportamento of via_de_dados_ciclo_unico is
   signal aux_out_mux_mem_alu : std_logic_vector(data_width - 1 downto 0);
   signal aux_in_mux_wa1      : std_logic_vector(data_width - 1 downto 0);
 
+  signal aux_flag_zero       : std_logic;
+
   signal aux_sel_mux_rgbk_A : std_logic;
   signal aux_sel_mux_rgbk_B : std_logic;
 
@@ -221,6 +225,8 @@ begin
   saida <= aux_data_rd1;
   pc_out <= aux_pc_out;
 
+  flag_zero <= aux_flag_zero;
+
   -- A partir deste comentário instancie todos o componentes que serão usados na sua via_de_dados_ciclo_unico.
   -- A instanciação do componente deve começar com um nome que você deve atribuir para a referida instancia seguido de : e seguido do nome
   -- que você atribuiu ao componente.
@@ -238,7 +244,8 @@ begin
     entrada_b => aux_alu_in_B,
     seletor => aux_ula_ctrl,
     saida_hi => aux_ula_out_HI,
-    saida_lo => aux_ula_out_LO
+    saida_lo => aux_ula_out_LO,
+    flag_zero => aux_flag_zero
   );
 
   instancia_banco_registradores : banco_registradores_mod
