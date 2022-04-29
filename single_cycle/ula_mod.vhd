@@ -18,7 +18,8 @@ entity ula_mod is
     entrada_b : in std_logic_vector((largura_dado - 1) downto 0);
     seletor : in std_logic_vector(2 downto 0);
     saida_hi : out std_logic_vector((largura_dado - 1) downto 0);
-    saida_lo : out std_logic_vector((largura_dado - 1) downto 0)
+    saida_lo : out std_logic_vector((largura_dado - 1) downto 0);
+    flag_zero: out std_logic
   );
 end ula_mod;
 
@@ -53,6 +54,11 @@ begin
       when others =>
       resultado_ula <= (x"00000000");
     end case;
+    if resultado_ula = x"00000000" then
+      flag_zero <= '1';
+    else
+      flag_zero <= '0';
+    end if;
   end process;
   saida_hi <= resultado_ula((2 * largura_dado - 1) downto largura_dado);
   saida_lo <= resultado_ula(largura_dado - 1 downto 0);

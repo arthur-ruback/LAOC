@@ -18,7 +18,8 @@ entity unidade_de_controle_ciclo_unico is
     );
     port (
         instrucao : in std_logic_vector(INSTR_WIDTH - 1 downto 0);       -- instrução
-        controle  : out std_logic_vector(DP_CTRL_BUS_WIDTH - 1 downto 0) -- controle da via
+        controle  : out std_logic_vector(DP_CTRL_BUS_WIDTH - 1 downto 0); -- controle da via
+        in_flag_zero : in std_logic
     );
 end unidade_de_controle_ciclo_unico;
 
