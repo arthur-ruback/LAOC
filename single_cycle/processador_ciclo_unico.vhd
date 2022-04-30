@@ -44,8 +44,7 @@ architecture comportamento of processador_ciclo_unico is
       controle : in std_logic_vector (DP_CTRL_BUS_WIDTH - 1 downto 0);
       instrucao : in std_logic_vector (INSTR_WIDTH - 1 downto 0);
       pc_out : out std_logic_vector (PC_WIDTH - 1 downto 0);
-      saida : out std_logic_vector (DATA_WIDTH - 1 downto 0);
-      flag_zero : out std_logic
+      saida : out std_logic_vector (DATA_WIDTH - 1 downto 0)
     );
   end component;
 
@@ -58,8 +57,7 @@ architecture comportamento of processador_ciclo_unico is
     );
     port (
       instrucao : in std_logic_vector(INSTR_WIDTH - 1 downto 0); -- instrução
-      controle : out std_logic_vector(DP_CTRL_BUS_WIDTH - 1 downto 0); -- controle da via
-      in_flag_zero : in std_logic
+      controle : out std_logic_vector(DP_CTRL_BUS_WIDTH - 1 downto 0) -- controle da via
     );
   end component;
 
@@ -88,7 +86,6 @@ architecture comportamento of processador_ciclo_unico is
   signal aux_instrucao : std_logic_vector(PROC_INSTR_WIDTH - 1 downto 0);
   signal aux_controle : std_logic_vector(DP_CTRL_BUS_WIDTH - 1 downto 0);
   signal aux_endereco : std_logic_vector(PROC_ADDR_WIDTH - 1 downto 0);
-  signal aux_flag_zero : std_logic;
 
 begin
   -- A partir deste comentário instancie todos o componentes que serão usados no seu processador_ciclo_unico.
@@ -111,8 +108,7 @@ begin
   instancia_unidade_de_controle_ciclo_unico : unidade_de_controle_ciclo_unico
   port map(
     instrucao => aux_instrucao, -- instrução
-    controle => aux_controle, -- controle da via
-    in_flag_zero => aux_flag_zero
+    controle => aux_controle -- controle da via
   );
 
   instancia_via_de_dados_ciclo_unico : via_de_dados_ciclo_unico
@@ -123,7 +119,6 @@ begin
     controle => aux_controle,
     instrucao => aux_instrucao,
     pc_out => aux_endereco,
-    saida => Leds_vermelhos_saida,
-    flag_zero => aux_flag_zero
+    saida => Leds_vermelhos_saida
   );
 end comportamento;

@@ -24,8 +24,7 @@ entity via_de_dados_ciclo_unico is
     controle : in std_logic_vector(dp_ctrl_bus_width - 1 downto 0);
     instrucao : in std_logic_vector(instr_width - 1 downto 0);
     pc_out : out std_logic_vector(pc_width - 1 downto 0);
-    saida : out std_logic_vector(data_width - 1 downto 0);
-    flag_zero : out std_logic
+    saida : out std_logic_vector(data_width - 1 downto 0)
   );
 end entity via_de_dados_ciclo_unico;
 
@@ -78,7 +77,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
   component memd is
     port (
       clk : in std_logic;
-      mem_write, mem_read : in std_logic;
+      mem_write : in std_logic;
       write_data_mem : in std_logic_vector(data_width - 1 downto 0);
       adress_mem : in std_logic_vector(instr_width - 1 downto 0);
       read_data_mem : out std_logic_vector(data_width - 1 downto 0)
@@ -104,17 +103,6 @@ architecture comportamento of via_de_dados_ciclo_unico is
       dado_ent_0, dado_ent_1 : in std_logic_vector(15 downto 0);
       sele_ent : in std_logic;
       dado_sai : out std_logic_vector(15 downto 0)
-    );
-  end component;
-
-  component mux41 is
-    generic (
-      largura_dado : natural := 16
-    );
-    port (
-      dado_ent_0, dado_ent_1, dado_ent_2, dado_ent_3 : in std_logic_vector((largura_dado - 1) downto 0);
-      sele_ent : in std_logic_vector(1 downto 0);
-      dado_sai : out std_logic_vector((largura_dado - 1) downto 0)
     );
   end component;
 
@@ -169,24 +157,31 @@ architecture comportamento of via_de_dados_ciclo_unico is
   signal aux_out_mux_mem_alu : std_logic_vector(data_width - 1 downto 0);
   signal aux_in_mux_wa1      : std_logic_vector(data_width - 1 downto 0);
 
+  signal aux_rd2_plus_funct : std_logic_vector(data_width - 1 downto 0);
+
   signal aux_flag_zero       : std_logic;
 
-  signal aux_sel_mux_rgbk_A : std_logic;
-  signal aux_sel_mux_rgbk_B : std_logic;
+  signal aux_sel_mux_rgbk_A  : std_logic;
+  signal aux_sel_mux_rgbk_B  : std_logic;
 
-  signal aux_sel_mux_in_wa1 : std_logic;
-  signal aux_sel_mux_in_wd1 : std_logic;
+  signal aux_sel_mux_in_wa1  : std_logic;
+  signal aux_sel_mux_in_wd1  : std_logic;
   signal aux_sel_mux_mem_alu : std_logic;
+  signal aux_sel_mux_pc2     : std_logic;
 
   signal aux_crtl_memd_wd : std_logic;
-  signal aux_crtl_memd_rd : std_logic;
 
-  signal aux_pc_out : std_logic_vector(pc_width - 1 downto 0);
-  signal aux_novo_pc : std_logic_vector(pc_width - 1 downto 0);
-  signal aux_pc_plus : std_logic_vector(pc_width - 1 downto 0);
-  signal aux_we_pc : std_logic;
-  signal aux_branch_pc : std_logic_vector(pc_width - 1 downto 0);
-  signal aux_sel_mux_new_pc : std_logic_vector(1 downto 0);
+  signal aux_branch : std_logic;
+  signal aux_jump   : std_logic;
+
+  signal aux_out_mux_pc1      : std_logic_vector(pc_width - 1 downto 0);
+
+  signal aux_pc_out      : std_logic_vector(pc_width - 1 downto 0);
+  signal aux_novo_pc     : std_logic_vector(pc_width - 1 downto 0);
+  signal aux_pc_plus     : std_logic_vector(pc_width - 1 downto 0);
+  signal aux_we_pc       : std_logic;
+  signal aux_branch_pc   : std_logic_vector(pc_width - 1 downto 0);
+  signal aux_sel_mux_pc1 : std_logic;
 
   signal aux_rd1_plus_funct : std_logic_vector(data_width - 1 downto 0);
 
@@ -204,8 +199,8 @@ begin
   aux_in_sign_ext <= instrucao(15 downto 5);
   aux_funct       <= instrucao(15 downto 13);
 
-  -- UL UL UL MA1 MD1 MLM WE1 WE2 RA RB MA MB WEData RDData MPC MPC PCW
-  -- 0  1  2  3   4   5   6   7   8  9  10 11 12     13     14  15  16
+  -- UL UL UL MA1 MD1 MLM WE1 WE2 RA RB MA MB WEData Jump Branch MPC PCW
+  -- 0  1  2  3   4   5   6   7   8  9  10 11 12     13   14     15  16
 
   aux_ula_ctrl(2 downto 0)       <= controle(2 downto 0);
   aux_sel_mux_in_wa1             <= controle(3);
@@ -218,14 +213,14 @@ begin
   aux_sel_mux_rgbk_A             <= controle(10);
   aux_sel_mux_rgbk_B             <= controle(11);
   aux_crtl_memd_wd               <= controle(12);
-  aux_crtl_memd_rd               <= controle(13);
-  aux_sel_mux_new_pc(1 downto 0) <= controle(15 downto 14);
+  aux_jump                       <= controle(13);
+  aux_branch                     <= controle(14);
+  aux_sel_mux_pc1                <= controle(15);
   aux_we_pc                      <= controle(16);
+  aux_sel_mux_pc2                <= (aux_jump) OR ((aux_branch) AND (aux_flag_zero));
 
   saida <= aux_data_rd1;
   pc_out <= aux_pc_out;
-
-  flag_zero <= aux_flag_zero;
 
   -- A partir deste comentário instancie todos o componentes que serão usados na sua via_de_dados_ciclo_unico.
   -- A instanciação do componente deve começar com um nome que você deve atribuir para a referida instancia seguido de : e seguido do nome
@@ -267,9 +262,8 @@ begin
   port map(
     clk => clock,
     mem_write => aux_crtl_memd_wd,
-    mem_read => aux_crtl_memd_rd,
     write_data_mem => aux_data_rd1,
-    adress_mem => aux_data_rd2,
+    adress_mem => aux_rd2_plus_funct,
     read_data_mem => aux_memd_out
   );
 
@@ -350,31 +344,44 @@ begin
   instancia_somador_plus2 : somador
   port map(
     entrada_a => aux_pc_out,
-    entrada_b => aux_signExt_out,
+    entrada_b => (x"0002"),
     saida => aux_pc_plus
   );
 
-  instancia_somador_branch : somador
+  instancia_somador_imediate : somador
   port map(
     entrada_a => aux_pc_plus,
-    entrada_b => (x"0002"),
+    entrada_b => aux_signExt_out,
     saida => aux_branch_pc
   );
 
-  mux_new_pc : mux41
+  mux_pc1 : mux21
+  port map(
+    dado_ent_0 => aux_rd1_plus_funct,
+    dado_ent_1 => aux_branch_pc,
+    sele_ent => aux_sel_mux_pc1,
+    dado_sai => aux_out_mux_pc1
+  );
+
+  mux_pc2 : mux21
   port map(
     dado_ent_0 => aux_pc_plus,
-    dado_ent_1 => aux_branch_pc,
-    dado_ent_2 => aux_data_rd1,
-    dado_ent_3 => aux_rd1_plus_funct,
-    sele_ent => aux_sel_mux_new_pc,
+    dado_ent_1 => aux_out_mux_pc1,
+    sele_ent => aux_sel_mux_pc2,
     dado_sai => aux_novo_pc
   );
 
-  instancia_somador_funct : somador
+  instancia_somador_funct_rd1 : somador
   port map(
     entrada_a => aux_data_rd1,
     entrada_b => (("0000000000000") & instrucao(15 downto 13)),
     saida => aux_rd1_plus_funct
+  );
+
+  instancia_somador_funct_rd2 : somador
+  port map(
+    entrada_a => aux_data_rd2,
+    entrada_b => (("0000000000000") & instrucao(15 downto 13)),
+    saida => aux_rd2_plus_funct
   );
 end architecture comportamento;
