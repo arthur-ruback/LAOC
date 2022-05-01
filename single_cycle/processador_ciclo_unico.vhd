@@ -17,12 +17,14 @@ entity processador_ciclo_unico is
     PROC_ADDR_WIDTH : natural := 16; -- tamanho do endereço da memória de programa do processador em bits
     DP_CTRL_BUS_WIDTH : natural := 17 -- tamanho do barramento de controle em bits
   );
+  
   port (
     --		Chaves_entrada 			: in std_logic_vector(DATA_WIDTH-1 downto 0);
     --		Chave_enter				: in std_logic;
     Leds_vermelhos_saida : out std_logic_vector(DATA_WIDTH - 1 downto 0);
     Chave_reset : in std_logic;
-    Clock : in std_logic
+    Clock : in std_logic;
+	 PC_debug: out std_logic_vector(15 downto 0) --sinal para acompanhar a instrução do programa
   );
 end processador_ciclo_unico;
 
@@ -121,4 +123,6 @@ begin
     pc_out => aux_endereco,
     saida => Leds_vermelhos_saida
   );
+  
+  PC_debug <= aux_endereco; -- retirando esse sinal para fora do módulo para depuração
 end comportamento;
