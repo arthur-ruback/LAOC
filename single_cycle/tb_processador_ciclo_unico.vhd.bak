@@ -19,7 +19,7 @@ architecture estimulos of tb_processador_ciclo_unico is
 		port (
 			Chave_reset : in std_logic; 
 			Clock   : in std_logic;
-			set_debug : in std_logic;
+			
 			PC_debug: out std_logic_vector(15 downto 0) --sinal para acompanhar a instrução do programa
 		);
 	end component;
@@ -27,7 +27,7 @@ architecture estimulos of tb_processador_ciclo_unico is
 	signal clk : std_logic;
 	signal rst : std_logic;
 	
-	signal aux_PC_debug : std_logic_vector(15 downto 0);
+	signal PC_debug : std_logic_vector(15 downto 0);
 
 	-- Definição das configurações de clock				
 	constant PERIODO    : time := 20 ns;
@@ -35,15 +35,7 @@ architecture estimulos of tb_processador_ciclo_unico is
 	constant OFFSET     : time := 5 ns;
 begin
 	-- instancia o componente 
-	instancia : processador_ciclo_unico port map(Clock => clk, Chave_reset => rst, PC_debug => aux_PC_debug, set_debug => set);
-	
-	rst <= '0';		
-	memi: process
-		begin
-		set <= '1';
-		wait until aux_PC_debug = "0000000000001000";
-		report "Fim do programa"; -- forca o fim do programa
-	end process memi;
+	instancia : processador_ciclo_unico port map(Clock => clk, Chave_reset => rst);
 	
 	-- processo para gerar o sinal de clock 		
 	gera_clock : process
@@ -57,7 +49,28 @@ begin
 		end loop CLOCK_LOOP;
 	end process gera_clock;
 	
+	-- processo para gerar o estimulo de reset		
+	gera_reset : process
+	begin
+		rst <= '0';
+		for i in 1 to 2 loop
+			wait until rising_edge(clk);
+		end loop;
+		rst <= '0';
+		wait;
+	end process gera_reset;
+	
 	-- processo para iniciar o carregamento de memi e iniciar/finalizar o programa
-
+	memi: process
+		begin
+		
+		set <= '1';
+		wait until PC_debug = "0000000000001000";
+		
+		assert false 
+		severity failure;
+		report "Fim do programa"; -- forca o fim do programa
+		
+	end process memi;
 	
 end;

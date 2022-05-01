@@ -24,6 +24,7 @@ entity processador_ciclo_unico is
     Leds_vermelhos_saida : out std_logic_vector(DATA_WIDTH - 1 downto 0);
     Chave_reset : in std_logic;
     Clock : in std_logic;
+	 set_debug : in std_logic;
 	 PC_debug: out std_logic_vector(15 downto 0) --sinal para acompanhar a instrução do programa
   );
 end processador_ciclo_unico;
@@ -69,6 +70,7 @@ architecture comportamento of processador_ciclo_unico is
       MI_ADDR_WIDTH : natural := 11 -- tamanho do endereço da memória de instruções em número de bits
     );
     port (
+		set_debug : in std_logic;
       clk : in std_logic;
       reset : in std_logic;
       Endereco : in std_logic_vector(MI_ADDR_WIDTH - 1 downto 0);
@@ -88,6 +90,7 @@ architecture comportamento of processador_ciclo_unico is
   signal aux_instrucao : std_logic_vector(PROC_INSTR_WIDTH - 1 downto 0);
   signal aux_controle : std_logic_vector(DP_CTRL_BUS_WIDTH - 1 downto 0);
   signal aux_endereco : std_logic_vector(PROC_ADDR_WIDTH - 1 downto 0);
+  signal aux_set_debug : std_logic;
 
 begin
   -- A partir deste comentário instancie todos o componentes que serão usados no seu processador_ciclo_unico.
@@ -104,7 +107,8 @@ begin
     clk => Clock,
     reset => Chave_reset,
     Endereco => aux_endereco(10 downto 0),
-    Instrucao => aux_instrucao
+    Instrucao => aux_instrucao,
+	 set_debug => aux_set_debug
   );
 
   instancia_unidade_de_controle_ciclo_unico : unidade_de_controle_ciclo_unico
