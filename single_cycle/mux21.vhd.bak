@@ -11,9 +11,9 @@ entity mux21 is
         largura_dado : natural := 16
     );
     port (
-        dado_ent_0, dado_ent_1 : in std_logic_vector(0 to (largura_dado - 1));
+        dado_ent_0, dado_ent_1 : in std_logic_vector((largura_dado - 1) downto 0);
         sele_ent               : in std_logic;
-        dado_sai               : out std_logic_vector(0 to (largura_dado - 1))
+        dado_sai               : out std_logic_vector((largura_dado - 1) downto 0)
     );
 end mux21;
 

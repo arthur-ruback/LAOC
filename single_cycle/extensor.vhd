@@ -13,13 +13,13 @@ entity extensor is
 	);
 
 	port (
-		entrada_Rs : in std_logic_vector((largura_dado - 1) downto 0);
-		saida      : out std_logic_vector((largura_saida - 1) downto 0)
+		entrada_Rs : in std_logic_vector(0 to (largura_dado - 1));
+		saida      : out std_logic_vector(0 to (largura_saida - 1))
 	);
 end extensor;
 
 architecture dataflow of extensor is
-	signal extensao : std_logic_vector((largura_saida - largura_dado - 1) downto 0);
+	signal extensao : std_logic_vector(0 to (largura_saida - largura_dado - 1));
 begin
 	extensao <= (others => entrada_Rs(largura_dado - 1)); -- todos os bits da extensão correspondem ao bit mais significativo da entrada Rs
 	saida    <= extensao & entrada_Rs;                    -- saida com o sinal estendido de Rs, concatenado com Rs. 

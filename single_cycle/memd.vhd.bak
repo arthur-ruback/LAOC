@@ -15,19 +15,19 @@ entity memd is
     port (
         clk                 : in std_logic;
         mem_write           : in std_logic;
-        write_data_mem      : in std_logic_vector(0 to MD_DATA_WIDTH - 1);
-        adress_mem          : in std_logic_vector(0 to MD_ADDR_WIDTH - 1);
-        read_data_mem       : out std_logic_vector(0 to MD_DATA_WIDTH - 1)
+        write_data_mem      : in std_logic_vector(MD_DATA_WIDTH - 1 downto 0);
+        adress_mem          : in std_logic_vector(MD_ADDR_WIDTH - 1 downto 0);
+        read_data_mem       : out std_logic_vector(MD_DATA_WIDTH - 1 downto 0)
     );
 end memd;
 
 architecture comportamental of memd is
     --alocar espaço para a memoria e iniciar com 0
-    type data_mem is array (0 to number_of_words - 1) of std_logic_vector(0 to MD_DATA_WIDTH - 1);
+    type data_mem is array (0 to number_of_words - 1) of std_logic_vector(MD_DATA_WIDTH - 1 downto 0);
     signal ram      : data_mem := (others => (others => '0'));
-    signal ram_addr : std_logic_vector(0 to MD_ADDR_WIDTH - 1);
+    signal ram_addr : std_logic_vector(MD_ADDR_WIDTH - 1 downto 0);
 begin
-    ram_addr <= adress_mem(0 to MD_ADDR_WIDTH - 1);
+    ram_addr <= adress_mem(MD_ADDR_WIDTH - 1 downto 0);
     process (clk)
     begin
         if (rising_edge(clk)) then

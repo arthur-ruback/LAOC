@@ -21,11 +21,11 @@ entity processador_ciclo_unico is
   port (
     --		Chaves_entrada 			: in std_logic_vector(DATA_WIDTH-1 downto 0);
     --		Chave_enter				: in std_logic;
-    Leds_vermelhos_saida : out std_logic_vector(DATA_WIDTH - 1 downto 0);
+    Leds_vermelhos_saida : out std_logic_vector(0 to DATA_WIDTH - 1);
     Chave_reset : in std_logic;
     Clock : in std_logic;
 	 set_debug : in std_logic;
-	 PC_debug: out std_logic_vector(15 downto 0) --sinal para acompanhar a instrução do programa
+	 PC_debug: out std_logic_vector(0 to 15) --sinal para acompanhar a instrução do programa
   );
 end processador_ciclo_unico;
 
@@ -44,10 +44,10 @@ architecture comportamento of processador_ciclo_unico is
       -- declare todas as portas da sua via_dados_ciclo_unico aqui.
       clock : in std_logic;
       reset : in std_logic;
-      controle : in std_logic_vector (DP_CTRL_BUS_WIDTH - 1 downto 0);
-      instrucao : in std_logic_vector (INSTR_WIDTH - 1 downto 0);
-      pc_out : out std_logic_vector (PC_WIDTH - 1 downto 0);
-      saida : out std_logic_vector (DATA_WIDTH - 1 downto 0)
+      controle : in std_logic_vector (0 to DP_CTRL_BUS_WIDTH - 1);
+      instrucao : in std_logic_vector (0 to INSTR_WIDTH - 1);
+      pc_out : out std_logic_vector (0 to PC_WIDTH - 1);
+      saida : out std_logic_vector (0 to DATA_WIDTH - 1)
     );
   end component;
 
@@ -59,8 +59,8 @@ architecture comportamento of processador_ciclo_unico is
       ULA_CTRL_WIDTH : natural := 3
     );
     port (
-      instrucao : in std_logic_vector(INSTR_WIDTH - 1 downto 0); -- instrução
-      controle : out std_logic_vector(DP_CTRL_BUS_WIDTH - 1 downto 0) -- controle da via
+      instrucao : in std_logic_vector(0 to INSTR_WIDTH - 1); -- instrução
+      controle : out std_logic_vector(0 to DP_CTRL_BUS_WIDTH - 1) -- controle da via
     );
   end component;
 
@@ -73,8 +73,8 @@ architecture comportamento of processador_ciclo_unico is
 		set_debug : in std_logic;
       clk : in std_logic;
       reset : in std_logic;
-      Endereco : in std_logic_vector(MI_ADDR_WIDTH - 1 downto 0);
-      Instrucao : out std_logic_vector(INSTR_WIDTH - 1 downto 0)
+      Endereco : in std_logic_vector(0 to MI_ADDR_WIDTH - 1);
+      Instrucao : out std_logic_vector(0 to INSTR_WIDTH - 1)
     );
   end component;
 
@@ -87,9 +87,9 @@ architecture comportamento of processador_ciclo_unico is
   -- A partir deste comentário faça associações necessárias das entradas declaradas na entidade do seu processador_ciclo_unico com 
   -- os sinais que você acabou de definir.
   -- Veja os exemplos abaixo:
-  signal aux_instrucao : std_logic_vector(PROC_INSTR_WIDTH - 1 downto 0);
-  signal aux_controle : std_logic_vector(DP_CTRL_BUS_WIDTH - 1 downto 0);
-  signal aux_endereco : std_logic_vector(PROC_ADDR_WIDTH - 1 downto 0);
+  signal aux_instrucao : std_logic_vector(0 to PROC_INSTR_WIDTH - 1);
+  signal aux_controle : std_logic_vector(0 to DP_CTRL_BUS_WIDTH - 1);
+  signal aux_endereco : std_logic_vector(0 to PROC_ADDR_WIDTH - 1);
   signal aux_set_debug : std_logic;
 
 begin
@@ -106,7 +106,7 @@ begin
   port map(
     clk => Clock,
     reset => Chave_reset,
-    Endereco => aux_endereco(10 downto 0),
+    Endereco => aux_endereco(0 to 10),
     Instrucao => aux_instrucao,
 	 set_debug => aux_set_debug
   );

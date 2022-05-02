@@ -21,10 +21,10 @@ entity via_de_dados_ciclo_unico is
     -- declare todas as portas da sua via_dados_ciclo_unico aqui.
     clock : in std_logic;
     reset : in std_logic;
-    controle : in std_logic_vector(dp_ctrl_bus_width - 1 downto 0);
-    instrucao : in std_logic_vector(instr_width - 1 downto 0);
-    pc_out : out std_logic_vector(pc_width - 1 downto 0);
-    saida : out std_logic_vector(data_width - 1 downto 0)
+    controle : in std_logic_vector(0 to dp_ctrl_bus_width - 1);
+    instrucao : in std_logic_vector(0 to instr_width - 1);
+    pc_out : out std_logic_vector(0 to pc_width - 1);
+    saida : out std_logic_vector(0 to data_width - 1)
   );
 end entity via_de_dados_ciclo_unico;
 
@@ -36,8 +36,8 @@ architecture comportamento of via_de_dados_ciclo_unico is
       pc_width : natural := 16
     );
     port (
-      entrada : in std_logic_vector(pc_width - 1 downto 0);
-      saida : out std_logic_vector(pc_width - 1 downto 0);
+      entrada : in std_logic_vector(0 to pc_width - 1);
+      saida : out std_logic_vector(0 to pc_width - 1);
       clk : in std_logic;
       we : in std_logic;
       reset : in std_logic
@@ -49,9 +49,9 @@ architecture comportamento of via_de_dados_ciclo_unico is
       largura_dado : natural := 16
     );
     port (
-      entrada_a : in std_logic_vector((largura_dado - 1) downto 0);
-      entrada_b : in std_logic_vector((largura_dado - 1) downto 0);
-      saida : out std_logic_vector((largura_dado - 1) downto 0)
+      entrada_a : in std_logic_vector(0 to (largura_dado - 1));
+      entrada_b : in std_logic_vector(0 to (largura_dado - 1));
+      saida : out std_logic_vector(0 to (largura_dado - 1))
     );
   end component;
 
@@ -61,14 +61,14 @@ architecture comportamento of via_de_dados_ciclo_unico is
       largura_ende : natural := 4
     );
     port (
-      ent_Rd1_ende : in std_logic_vector((largura_ende - 1) downto 0);
-      ent_Rd2_ende : in std_logic_vector((largura_ende - 1) downto 0);
-      ent_Wd1_ende : in std_logic_vector((largura_ende - 1) downto 0);
-      ent_Wd2_ende : in std_logic_vector((largura_ende - 1) downto 0);
-      ent_Wd1_dado : in std_logic_vector((largura_dado - 1) downto 0);
-      ent_Wd2_dado : in std_logic_vector((largura_dado - 1) downto 0);
-      sai_Rd1_dado : out std_logic_vector((largura_dado - 1) downto 0);
-      sai_Rd2_dado : out std_logic_vector((largura_dado - 1) downto 0);
+      ent_Rd1_ende : in std_logic_vector(0 to (largura_ende - 1));
+      ent_Rd2_ende : in std_logic_vector(0 to (largura_ende - 1));
+      ent_Wd1_ende : in std_logic_vector(0 to (largura_ende - 1));
+      ent_Wd2_ende : in std_logic_vector(0 to (largura_ende - 1));
+      ent_Wd1_dado : in std_logic_vector(0 to (largura_dado - 1));
+      ent_Wd2_dado : in std_logic_vector(0 to (largura_dado - 1));
+      sai_Rd1_dado : out std_logic_vector(0 to (largura_dado - 1));
+      sai_Rd2_dado : out std_logic_vector(0 to (largura_dado - 1));
       clk : in std_logic;
       We1, We2 : in std_logic
     );
@@ -78,9 +78,9 @@ architecture comportamento of via_de_dados_ciclo_unico is
     port (
       clk : in std_logic;
       mem_write : in std_logic;
-      write_data_mem : in std_logic_vector(data_width - 1 downto 0);
-      adress_mem : in std_logic_vector(instr_width - 1 downto 0);
-      read_data_mem : out std_logic_vector(data_width - 1 downto 0)
+      write_data_mem : in std_logic_vector(0 to data_width - 1);
+      adress_mem : in std_logic_vector(0 to instr_width - 1);
+      read_data_mem : out std_logic_vector(0 to data_width - 1)
     );
   end component;
 
@@ -89,35 +89,35 @@ architecture comportamento of via_de_dados_ciclo_unico is
       largura_dado : natural := 16
     );
     port (
-      entrada_a : in std_logic_vector((largura_dado - 1) downto 0);
-      entrada_b : in std_logic_vector((largura_dado - 1) downto 0);
-      seletor : in std_logic_vector(2 downto 0);
-      saida_hi : out std_logic_vector((largura_dado - 1) downto 0);
-      saida_lo : out std_logic_vector((largura_dado - 1) downto 0);
+      entrada_a : in std_logic_vector(0 to (largura_dado - 1));
+      entrada_b : in std_logic_vector(0 to (largura_dado - 1));
+      seletor : in std_logic_vector(0 to 2);
+      saida_hi : out std_logic_vector(0 to (largura_dado - 1));
+      saida_lo : out std_logic_vector(0 to (largura_dado - 1));
       flag_zero : out std_logic
     );
   end component;
 
   component mux21 is
     port (
-      dado_ent_0, dado_ent_1 : in std_logic_vector(15 downto 0);
+      dado_ent_0, dado_ent_1 : in std_logic_vector(0 to 15);
       sele_ent : in std_logic;
-      dado_sai : out std_logic_vector(15 downto 0)
+      dado_sai : out std_logic_vector(0 to 15)
     );
   end component;
 
   component registrador is
     port (
-      entrada_dados : in std_logic_vector(15 downto 0);
+      entrada_dados : in std_logic_vector(0 to 15);
       WE, clk, reset : in std_logic;
-      saida_dados : out std_logic_vector(15 downto 0)
+      saida_dados : out std_logic_vector(0 to 15)
     );
   end component;
 
   component extensor is
     port (
-      entrada_Rs : in std_logic_vector(10 downto 0);
-      saida : out std_logic_vector((data_width - 1) downto 0)
+      entrada_Rs : in std_logic_vector(0 to 10);
+      saida : out std_logic_vector(0 to (data_width - 1))
     );
   end component;
 
@@ -126,38 +126,38 @@ architecture comportamento of via_de_dados_ciclo_unico is
   -- Os sinais auxiliares devem ser compatíveis com o mesmo tipo (std_logic, std_logic_vector, etc.) e o mesmo tamanho dos sinais dos portos dos
   -- componentes onde serão usados.
   -- Veja os exemplos abaixo:
-  signal aux_addr_rd1 : std_logic_vector(fr_addr_width - 1 downto 0);
-  signal aux_addr_rd2 : std_logic_vector(fr_addr_width - 1 downto 0);
-  signal aux_addr_wd1 : std_logic_vector(fr_addr_width - 1 downto 0);
-  signal aux_addr_wd2 : std_logic_vector(fr_addr_width - 1 downto 0);
-  signal aux_data_rd1 : std_logic_vector(data_width - 1 downto 0);
-  signal aux_data_rd2 : std_logic_vector(data_width - 1 downto 0);
-  signal aux_data_wd1 : std_logic_vector(data_width - 1 downto 0);
-  signal aux_data_wd2 : std_logic_vector(data_width - 1 downto 0);
+  signal aux_addr_rd1 : std_logic_vector(0 to fr_addr_width - 1);
+  signal aux_addr_rd2 : std_logic_vector(0 to fr_addr_width - 1);
+  signal aux_addr_wd1 : std_logic_vector(0 to fr_addr_width - 1);
+  signal aux_addr_wd2 : std_logic_vector(0 to fr_addr_width - 1);
+  signal aux_data_rd1 : std_logic_vector(0 to data_width - 1);
+  signal aux_data_rd2 : std_logic_vector(0 to data_width - 1);
+  signal aux_data_wd1 : std_logic_vector(0 to data_width - 1);
+  signal aux_data_wd2 : std_logic_vector(0 to data_width - 1);
   signal aux_crtl_w1 : std_logic;
   signal aux_crtl_w2 : std_logic;
 
-  signal aux_alu_in_A : std_logic_vector(data_width - 1 downto 0);
-  signal aux_alu_in_B : std_logic_vector(data_width - 1 downto 0);
-  signal aux_ula_ctrl : std_logic_vector(ula_ctrl_width - 1 downto 0);
-  signal aux_ula_out_HI : std_logic_vector(data_width - 1 downto 0);
-  signal aux_ula_out_LO : std_logic_vector(data_width - 1 downto 0);
+  signal aux_alu_in_A : std_logic_vector(0 to data_width - 1);
+  signal aux_alu_in_B : std_logic_vector(0 to data_width - 1);
+  signal aux_ula_ctrl : std_logic_vector(0 to ula_ctrl_width - 1);
+  signal aux_ula_out_HI : std_logic_vector(0 to data_width - 1);
+  signal aux_ula_out_LO : std_logic_vector(0 to data_width - 1);
 
-  signal aux_in_sign_ext : std_logic_vector(10 downto 0);
-  signal aux_signExt_out : std_logic_vector(data_width - 1 downto 0);
+  signal aux_in_sign_ext : std_logic_vector(0 to 10);
+  signal aux_signExt_out : std_logic_vector(0 to data_width - 1);
 
-  signal aux_funct : std_logic_vector(2 downto 0);
+  signal aux_funct : std_logic_vector(0 to 2);
 
-  signal aux_in_reg_A : std_logic_vector(data_width - 1 downto 0);
-  signal aux_in_reg_B : std_logic_vector(data_width - 1 downto 0);
+  signal aux_in_reg_A : std_logic_vector(0 to data_width - 1);
+  signal aux_in_reg_B : std_logic_vector(0 to data_width - 1);
   signal aux_en_reg_A : std_logic;
   signal aux_en_reg_B : std_logic;
 
-  signal aux_memd_out        : std_logic_vector(data_width - 1 downto 0);
-  signal aux_out_mux_mem_alu : std_logic_vector(data_width - 1 downto 0);
-  signal aux_in_mux_wa1      : std_logic_vector(data_width - 1 downto 0);
+  signal aux_memd_out        : std_logic_vector(0 to data_width - 1);
+  signal aux_out_mux_mem_alu : std_logic_vector(0 to data_width - 1);
+  signal aux_in_mux_wa1      : std_logic_vector(0 to data_width - 1);
 
-  signal aux_rd2_plus_funct : std_logic_vector(data_width - 1 downto 0);
+  signal aux_rd2_plus_funct : std_logic_vector(0 to data_width - 1);
 
   signal aux_flag_zero       : std_logic;
 
@@ -174,35 +174,35 @@ architecture comportamento of via_de_dados_ciclo_unico is
   signal aux_branch : std_logic;
   signal aux_jump   : std_logic;
 
-  signal aux_out_mux_pc1      : std_logic_vector(pc_width - 1 downto 0);
+  signal aux_out_mux_pc1      : std_logic_vector(0 to pc_width - 1);
 
-  signal aux_pc_out      : std_logic_vector(pc_width - 1 downto 0);
-  signal aux_novo_pc     : std_logic_vector(pc_width - 1 downto 0);
-  signal aux_pc_plus     : std_logic_vector(pc_width - 1 downto 0);
+  signal aux_pc_out      : std_logic_vector(0 to pc_width - 1);
+  signal aux_novo_pc     : std_logic_vector(0 to pc_width - 1);
+  signal aux_pc_plus     : std_logic_vector(0 to pc_width - 1);
   signal aux_we_pc       : std_logic;
-  signal aux_branch_pc   : std_logic_vector(pc_width - 1 downto 0);
+  signal aux_branch_pc   : std_logic_vector(0 to pc_width - 1);
   signal aux_sel_mux_pc1 : std_logic;
 
-  signal aux_rd1_plus_funct : std_logic_vector(data_width - 1 downto 0);
+  signal aux_rd1_plus_funct : std_logic_vector(0 to data_width - 1);
 
-  signal foo : std_logic_vector(11 downto 0);
+  signal foo : std_logic_vector(0 to 11);
 
 begin
 
   -- A partir deste comentário faça associações necessárias das entradas declaradas na entidade da sua via_dados_ciclo_unico com
   -- os sinais que você acabou de definir.
   -- Veja os exemplos abaixo:
-  aux_addr_rd1    <= instrucao(8 downto 5);
-  aux_addr_rd2    <= instrucao(12 downto 9);
-  aux_in_mux_wa1  <= x"000" & instrucao(8 downto 5);
-  aux_addr_wd2    <= instrucao(12 downto 9);
-  aux_in_sign_ext <= instrucao(15 downto 5);
-  aux_funct       <= instrucao(15 downto 13);
+  aux_addr_rd1    <= instrucao(5 to 8);
+  aux_addr_rd2    <= instrucao(9 to 12);
+  aux_in_mux_wa1  <= x"000" & instrucao(5 to 8);
+  aux_addr_wd2    <= instrucao(9 to 12);
+  aux_in_sign_ext <= instrucao(5 to 15);
+  aux_funct       <= instrucao(13 to 15);
 
   -- UL UL UL MA1 MD1 MLM WE1 WE2 RA RB MA MB WEData Jump Branch MPC PCW
   -- 0  1  2  3   4   5   6   7   8  9  10 11 12     13   14     15  16
 
-  aux_ula_ctrl(2 downto 0)       <= controle(2 downto 0);
+  aux_ula_ctrl(0 to 2)       <= controle(0 to 2);
   aux_sel_mux_in_wa1             <= controle(3);
   aux_sel_mux_in_wd1             <= controle(4);
   aux_sel_mux_mem_alu            <= controle(5);   
@@ -296,8 +296,8 @@ begin
     dado_ent_0 => aux_in_mux_wa1,
     dado_ent_1 => (x"000F"), -- endereço para registrador de $ja
     sele_ent => aux_sel_mux_in_wa1,
-    dado_sai(3 downto 0) => aux_addr_wd1,
-    dado_sai(15 downto 4) => foo
+    dado_sai(0 to 3) => aux_addr_wd1,
+    dado_sai(4 to 15) => foo
   );
 
   mux_mem_alu : mux21
@@ -374,14 +374,14 @@ begin
   instancia_somador_funct_rd1 : somador
   port map(
     entrada_a => aux_data_rd1,
-    entrada_b => (("0000000000000") & instrucao(15 downto 13)),
+    entrada_b => (("0000000000000") & instrucao(13 to 15)),
     saida => aux_rd1_plus_funct
   );
 
   instancia_somador_funct_rd2 : somador
   port map(
     entrada_a => aux_data_rd2,
-    entrada_b => (("0000000000000") & instrucao(15 downto 13)),
+    entrada_b => (("0000000000000") & instrucao(13 to 15)),
     saida => aux_rd2_plus_funct
   );
 end architecture comportamento;

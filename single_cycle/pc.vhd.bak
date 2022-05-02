@@ -8,11 +8,11 @@ use ieee.std_logic_1164.all;
 
 entity pc is
 	generic (
-		PC_WIDTH : natural := 16 -- tamanho de PC em bits (complete)
+		PC_WIDTH : natural -- tamanho de PC em bits (complete)
 	);
 	port (
-		entrada : in std_logic_vector (0 to PC_WIDTH - 1);
-		saida   : out std_logic_vector(0 to PC_WIDTH - 1);
+		entrada : in std_logic_vector (PC_WIDTH - 1 downto 0);
+		saida   : out std_logic_vector(PC_WIDTH - 1 downto 0);
 		clk     : in std_logic;
 		we      : in std_logic;
 		reset   : in std_logic

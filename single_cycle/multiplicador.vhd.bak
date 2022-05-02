@@ -13,9 +13,9 @@ entity multiplicador is
     );
 
     port (
-        entrada_a : in std_logic_vector(0 to (largura_dado - 1));
-        entrada_b : in std_logic_vector(0 to (largura_dado - 1));
-        saida     : out std_logic_vector(0 to (2 * largura_dado - 1))
+        entrada_a : in std_logic_vector((largura_dado - 1) downto 0);
+        entrada_b : in std_logic_vector((largura_dado - 1) downto 0);
+        saida     : out std_logic_vector((2 * largura_dado - 1) downto 0)
     );
 end multiplicador;
 

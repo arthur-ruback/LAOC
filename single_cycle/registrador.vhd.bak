@@ -11,9 +11,9 @@ entity registrador is
         largura_dado : natural := 16
     );
     port (
-        entrada_dados  : in std_logic_vector(0 to (largura_dado - 1));
+        entrada_dados  : in std_logic_vector((largura_dado - 1) downto 0);
         WE, clk, reset : in std_logic;
-        saida_dados    : out std_logic_vector(0 to (largura_dado - 1))
+        saida_dados    : out std_logic_vector((largura_dado - 1) downto 0)
     );
 end registrador;
 

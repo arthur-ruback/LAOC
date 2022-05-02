@@ -14,18 +14,18 @@ entity ula_mod is
   );
 
   port (
-    entrada_a : in std_logic_vector((largura_dado - 1) downto 0);
-    entrada_b : in std_logic_vector((largura_dado - 1) downto 0);
-    seletor : in std_logic_vector(2 downto 0);
-    saida_hi : out std_logic_vector((largura_dado - 1) downto 0);
-    saida_lo : out std_logic_vector((largura_dado - 1) downto 0);
+    entrada_a : in std_logic_vector(0 to (largura_dado - 1));
+    entrada_b : in std_logic_vector(0 to (largura_dado - 1));
+    seletor : in std_logic_vector(0 to 2);
+    saida_hi : out std_logic_vector(0 to (largura_dado - 1));
+    saida_lo : out std_logic_vector(0 to (largura_dado - 1));
     flag_zero: out std_logic
   );
 end ula_mod;
 
 architecture comportamental of ula_mod is
-  signal resultado_ula : std_logic_vector((2 * largura_dado - 1) downto 0);
-  signal aux : std_logic_vector((largura_dado - 1) downto 0);
+  signal resultado_ula : std_logic_vector(o to (2 * largura_dado - 1));
+  signal aux : std_logic_vector(0 to (largura_dado - 1));
 begin
   process (entrada_a, entrada_b, seletor, aux) is
   begin
@@ -60,6 +60,6 @@ begin
       flag_zero <= '0';
     end if;
   end process;
-  saida_hi <= resultado_ula((2 * largura_dado - 1) downto largura_dado);
-  saida_lo <= resultado_ula(largura_dado - 1 downto 0);
+  saida_hi <= resultado_ula(largura_dado to (2 * largura_dado - 1));
+  saida_lo <= resultado_ula(0 to largura_dado - 1);
 end comportamental;

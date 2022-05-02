@@ -17,8 +17,8 @@ entity unidade_de_controle_ciclo_unico is
     ULA_CTRL_WIDTH : natural := 3
   );
   port (
-    instrucao : in std_logic_vector(INSTR_WIDTH - 1 downto 0); -- instrução
-    controle : out std_logic_vector(DP_CTRL_BUS_WIDTH - 1 downto 0) -- controle da via
+    instrucao : in std_logic_vector(0 to INSTR_WIDTH - 1); -- instrução
+    controle : out std_logic_vector(0 to DP_CTRL_BUS_WIDTH - 1) -- controle da via
   );
 end unidade_de_controle_ciclo_unico;
 
@@ -28,15 +28,15 @@ architecture beh of unidade_de_controle_ciclo_unico is
   --signal opcode   : std_logic_vector (OPCODE_WIDTH-1 downto 0);			-- opcode
   --signal ctrl_aux : std_logic_vector (DP_CTRL_BUS_WIDTH-1 downto 0);		-- controle
 
-  signal inst_aux : std_logic_vector (15 downto 0); -- instrucao
-  signal opcode : std_logic_vector (4 downto 0); -- opcode
-  signal ctrl_aux : std_logic_vector (16 downto 0); -- controle
+  signal inst_aux : std_logic_vector (0 to 15); -- instrucao
+  signal opcode : std_logic_vector (0 to 4); -- opcode
+  signal ctrl_aux : std_logic_vector (0 to 16); -- controle
 
 begin
   inst_aux <= instrucao;
   -- A linha abaixo não produz erro de compilação no Quartus II, mas no Modelsim (GHDL) produz.	
   --	opcode <= inst_aux (INSTR_WIDTH-1 downto INSTR_WIDTH-OPCODE_WIDTH);
-  opcode <= inst_aux (4 downto 0);
+  opcode <= inst_aux (0 to 4);
 
   -- UL UL UL MA1 MD1 MLM WE1 WE2 RA RB MA MB WEData Jump Branch MPC PCW
   -- 0  1  2  3   4   5   6   7   8  9  10 11 12     13   14     15  16

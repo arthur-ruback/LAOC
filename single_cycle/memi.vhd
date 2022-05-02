@@ -16,13 +16,13 @@ entity memi is
 		set_debug : in std_logic;
 		clk       : in std_logic;
 		reset     : in std_logic; --retirei o reset
-		Endereco  : in std_logic_vector(MI_ADDR_WIDTH - 1 downto 0);
-		Instrucao : out std_logic_vector(INSTR_WIDTH - 1 downto 0)
+		Endereco  : in std_logic_vector(0 to MI_ADDR_WIDTH - 1);
+		Instrucao : out std_logic_vector(0 to INSTR_WIDTH - 1)
 	);
 end entity;
 
 architecture comportamental of memi is
-	type rom_type is array (0 to 2 ** MI_ADDR_WIDTH - 1) of std_logic_vector(INSTR_WIDTH - 1 downto 0);
+	type rom_type is array (0 to 2 ** MI_ADDR_WIDTH - 1) of std_logic_vector(0 to INSTR_WIDTH - 1);
 	signal rom : rom_type;
 begin
 	process (clk, reset) is
