@@ -51,6 +51,7 @@ begin
             if WE2 = '1' then
                 banco(to_integer(unsigned(ent_Wd2_ende))) <= ent_Wd2_dado;
             end if;
+				banco(0) <= x"0000";
         end if;
     end process;
 end comportamental;
