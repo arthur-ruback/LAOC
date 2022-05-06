@@ -24,7 +24,7 @@ entity ula_mod is
 end ula_mod;
 
 architecture comportamental of ula_mod is
-  signal resultado_ula : std_logic_vector(o to (2 * largura_dado - 1));
+  signal resultado_ula : std_logic_vector(0 to (2 * largura_dado - 1));
   signal aux : std_logic_vector(0 to (largura_dado - 1));
 begin
   process (entrada_a, entrada_b, seletor, aux) is
@@ -60,6 +60,6 @@ begin
       flag_zero <= '0';
     end if;
   end process;
-  saida_hi <= resultado_ula(largura_dado to (2 * largura_dado - 1));
-  saida_lo <= resultado_ula(0 to largura_dado - 1);
+  saida_hi <= resultado_ula(0 to largura_dado-1);
+  saida_lo <= resultado_ula(largura_dado to (2 * largura_dado - 1));
 end comportamental;

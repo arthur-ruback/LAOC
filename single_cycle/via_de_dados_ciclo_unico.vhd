@@ -184,11 +184,17 @@ architecture comportamento of via_de_dados_ciclo_unico is
   signal aux_sel_mux_pc1 : std_logic;
 
   signal aux_rd1_plus_funct : std_logic_vector(0 to data_width - 1);
-
+  
+  -- o compilador do modelsim recusou atribuição direta de entrada_b
+  -- foi preciso criar sinais novos
+  signal aux_entrada_b : std_logic_vector(15 downto 0);
   signal foo : std_logic_vector(0 to 11);
 
-begin
-
+  begin
+  -- sinal criado para compilar no modelsim
+  aux_entrada_b <=(("0000000000000") & instrucao(13 to 15));
+  
+  
   -- A partir deste comentário faça associações necessárias das entradas declaradas na entidade da sua via_dados_ciclo_unico com
   -- os sinais que você acabou de definir.
   -- Veja os exemplos abaixo:
@@ -296,8 +302,8 @@ begin
     dado_ent_0 => aux_in_mux_wa1,
     dado_ent_1 => (x"000F"), -- endereço para registrador de $ja
     sele_ent => aux_sel_mux_in_wa1,
-    dado_sai(0 to 3) => aux_addr_wd1,
-    dado_sai(4 to 15) => foo
+    dado_sai(12 to 15) => aux_addr_wd1,
+    dado_sai(0 to 11) => foo
   );
 
   mux_mem_alu : mux21
@@ -374,14 +380,16 @@ begin
   instancia_somador_funct_rd1 : somador
   port map(
     entrada_a => aux_data_rd1,
-    entrada_b => (("0000000000000") & instrucao(13 to 15)),
+    entrada_b => aux_entrada_b,
     saida => aux_rd1_plus_funct
   );
+  
+  
 
   instancia_somador_funct_rd2 : somador
   port map(
     entrada_a => aux_data_rd2,
-    entrada_b => (("0000000000000") & instrucao(13 to 15)),
+    entrada_b => aux_entrada_b,
     saida => aux_rd2_plus_funct
   );
 end architecture comportamento;

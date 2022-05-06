@@ -13,7 +13,6 @@ entity memi is
 		MI_ADDR_WIDTH : natural := 16 -- tamanho do endereco da memoria de instrucoes em numero de bits
 	);
 	port (
-		set_debug : in std_logic;
 		clk       : in std_logic;
 		reset     : in std_logic; --retirei o reset
 		Endereco  : in std_logic_vector(0 to MI_ADDR_WIDTH - 1);
@@ -29,12 +28,11 @@ begin
 	begin
 		if (rising_edge(clk)) then
 			if (reset = '1') then
-				rom <= (
-					0      => X"0200", -- exemplo de uma instrução qualquer de 16 bits (4 símbos em hexadecimal)
-					1      => X"4302", -- exemplo de uma instrução qualquer de 16 bits (4 símbos em hexadecimal)
-					2      => X"C423", -- exemplo de uma instrução qualquer de 16 bits (4 símbos em hexadecimal)
-					3      => X"2144", -- exemplo de uma instrução qualquer de 16 bits (4 símbos em hexadecimal)
-					others => X"0000"  -- exemplo de uma instrução qualquer de 16 bits (4 símbos em hexadecimal)
+				rom <= (					-- exemplo de uma instrução qualquer de 16 bits (4 símbos em hexadecimal)
+					0      => X"4064", -- LI1 100
+					1      => X"4FA3", -- LI2 -93
+					2      => X"0980", -- ADD r3
+					others => X"0000"
 					);
 			else
 				Instrucao <= rom(to_integer(unsigned(Endereco)));

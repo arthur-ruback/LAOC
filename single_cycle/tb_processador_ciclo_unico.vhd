@@ -12,22 +12,18 @@ entity tb_processador_ciclo_unico is
 end tb_processador_ciclo_unico;
 
 architecture estimulos of tb_processador_ciclo_unico is
-	signal set: std_logic := '0'; --sinal para iniciar a memoria de programa
 	
 	-- Declarar a unidade sob teste
 	component processador_ciclo_unico
 		port (
 			Chave_reset : in std_logic; 
-			Clock   : in std_logic;
-			set_debug : in std_logic;
-			PC_debug: out std_logic_vector(15 downto 0) --sinal para acompanhar a instrução do programa
+			Clock   : in std_logic
 		);
 	end component;
 
 	signal clk : std_logic;
 	signal rst : std_logic;
 	
-	signal aux_PC_debug : std_logic_vector(15 downto 0);
 
 	-- Definição das configurações de clock				
 	constant PERIODO    : time := 20 ns;
@@ -35,15 +31,10 @@ architecture estimulos of tb_processador_ciclo_unico is
 	constant OFFSET     : time := 5 ns;
 begin
 	-- instancia o componente 
-	instancia : processador_ciclo_unico port map(Clock => clk, Chave_reset => rst, PC_debug => aux_PC_debug, set_debug => set);
+	instancia : processador_ciclo_unico port map(Clock => clk, Chave_reset => rst);
 	
-	rst <= '0';		
-	memi: process
-		begin
-		set <= '1';
-		wait until aux_PC_debug = "0000000000001000";
-		report "Fim do programa"; -- forca o fim do programa
-	end process memi;
+	rst <= '1', '0' after 100 ns;		
+	
 	
 	-- processo para gerar o sinal de clock 		
 	gera_clock : process
