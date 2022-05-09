@@ -16,7 +16,7 @@ entity ula_mod is
   port (
     entrada_a : in std_logic_vector(0 to (largura_dado - 1));
     entrada_b : in std_logic_vector(0 to (largura_dado - 1));
-    seletor : in std_logic_vector(0 to 2);
+    seletor : in std_logic_vector(0 to 3);
     saida_hi : out std_logic_vector(0 to (largura_dado - 1));
     saida_lo : out std_logic_vector(0 to (largura_dado - 1));
     flag_zero: out std_logic
@@ -30,27 +30,33 @@ begin
   process (entrada_a, entrada_b, seletor, aux) is
   begin
     case(seletor) is
-      when "000" => -- soma com sinal
+      when "0000" => -- soma com sinal
       resultado_ula <= (x"0000") & std_logic_vector(signed(entrada_a) + signed(entrada_b));
-      when "001" => -- subtração com sinal
+      when "0001" => -- subtração com sinal
       resultado_ula <= (x"0000") & std_logic_vector(signed(entrada_a) - signed(entrada_b));
-      when "010" => -- and lógico
+      when "0010" => -- and lógico
       resultado_ula <= (x"0000") & entrada_a and entrada_b;
-      when "011" => -- or lógico
+      when "0011" => -- or lógico
       resultado_ula <= (x"0000") & entrada_a or entrada_b;
-      when "100" => -- not lógico
+      when "0100" => -- not lógico
       resultado_ula <= (x"0000") & not(entrada_a);
-      when "101" => -- multiplicação
+      when "0101" => -- multiplicação
       resultado_ula <= std_logic_vector(signed(entrada_a) * signed(entrada_b));
-      when "110" => -- Divisão, hi = resto, lo = quociente
+      when "0110" => -- Divisão, hi = resto, lo = quociente
       -- TODO: CONSERTAR
       resultado_ula <= (x"00000000");
-      when "111" => -- Comparação A < B
-      if (signed(entrada_a) < signed(entrada_b)) then
-        resultado_ula <= (others => '1');
-      else
-        resultado_ula <= (others => '0');
-      end if;
+      when "0111" => -- Comparação A < B
+			if (signed(entrada_a) < signed(entrada_b)) then
+			  resultado_ula <= (others => '1');
+			else
+			  resultado_ula <= (others => '0');
+			end if;
+		when "1000" => -- Comparação A == B
+			if (signed(entrada_a) = signed(entrada_b)) then
+			  resultado_ula <= (others => '1');
+			else
+			  resultado_ula <= (others => '0');
+			end if;
       when others =>
       resultado_ula <= (x"00000000");
     end case;

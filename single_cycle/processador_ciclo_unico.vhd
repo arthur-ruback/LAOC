@@ -15,7 +15,7 @@ entity processador_ciclo_unico is
     DATA_WIDTH : natural := 16; -- tamanho do barramento de dados em bits
     PROC_INSTR_WIDTH : natural := 16; -- tamanho da instrução do processador em bits
     PROC_ADDR_WIDTH : natural := 16; -- tamanho do endereço da memória de programa do processador em bits
-    DP_CTRL_BUS_WIDTH : natural := 17 -- tamanho do barramento de controle em bits
+    DP_CTRL_BUS_WIDTH : natural := 18 -- tamanho do barramento de controle em bits
   );
   
   port (
@@ -32,7 +32,7 @@ architecture comportamento of processador_ciclo_unico is
   component via_de_dados_ciclo_unico is
     generic (
       -- declare todos os tamanhos dos barramentos (sinais) das portas da sua via_dados_ciclo_unico aqui.
-      DP_CTRL_BUS_WIDTH : natural := 17; -- tamanho do barramento de controle da via de dados (DP) em bits
+      DP_CTRL_BUS_WIDTH : natural := 18; -- tamanho do barramento de controle da via de dados (DP) em bits
       DATA_WIDTH : natural := 16; -- tamanho do dado em bits
       PC_WIDTH : natural := 16; -- tamanho da entrada de endereços da MI ou MP em bits (memi.vhd)
       FR_ADDR_WIDTH : natural := 4; -- tamanho da linha de endereços do banco de registradores em bits
@@ -53,7 +53,7 @@ architecture comportamento of processador_ciclo_unico is
     generic (
       INSTR_WIDTH : natural := 16;
       OPCODE_WIDTH : natural := 5;
-      DP_CTRL_BUS_WIDTH : natural := 17;
+      DP_CTRL_BUS_WIDTH : natural := 18;
       ULA_CTRL_WIDTH : natural := 3
     );
     port (

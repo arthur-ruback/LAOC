@@ -10,11 +10,11 @@ use IEEE.std_logic_1164.all;
 entity via_de_dados_ciclo_unico is
   generic (
     -- declare todos os tamanhos dos barramentos (sinais) das portas da sua via_dados_ciclo_unico aqui.
-    dp_ctrl_bus_width : natural := 17; -- tamanho do barramento de controle da via de dados (DP) em bits
+    dp_ctrl_bus_width : natural := 18; -- tamanho do barramento de controle da via de dados (DP) em bits
     data_width : natural := 16; -- tamanho do dado em bits
     pc_width : natural := 16; -- tamanho da entrada de endereços da MI ou MP em bits (memi.vhd)
     fr_addr_width : natural := 4; -- tamanho da linha de endereços do banco de registradores em bits
-    ula_ctrl_width : natural := 3; -- tamanho da linha de controle da ULA
+    ula_ctrl_width : natural := 4; -- tamanho da linha de controle da ULA
     instr_width : natural := 16 -- tamanho da instrução em bits
   );
   port (
@@ -91,7 +91,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
     port (
       entrada_a : in std_logic_vector(0 to (largura_dado - 1));
       entrada_b : in std_logic_vector(0 to (largura_dado - 1));
-      seletor : in std_logic_vector(0 to 2);
+      seletor : in std_logic_vector(0 to 3);
       saida_hi : out std_logic_vector(0 to (largura_dado - 1));
       saida_lo : out std_logic_vector(0 to (largura_dado - 1));
       flag_zero : out std_logic
@@ -205,24 +205,24 @@ architecture comportamento of via_de_dados_ciclo_unico is
   aux_in_sign_ext <= instrucao(5 to 15);
   aux_funct       <= instrucao(13 to 15);
 
-  -- UL UL UL MA1 MD1 MLM WE1 WE2 RA RB MA MB WEData Jump Branch MPC PCW
-  -- 0  1  2  3   4   5   6   7   8  9  10 11 12     13   14     15  16
+  -- UL UL UL UL MA1 MD1 MLM WE1 WE2 RA RB MA MB WEData Jump Branch MPC PCW
+  -- 0  1  2  3  4   5   6   7   8   9  10 11 12 13     14   15     16  17
 
-  aux_ula_ctrl(0 to 2)       <= controle(0 to 2);
-  aux_sel_mux_in_wa1             <= controle(3);
-  aux_sel_mux_in_wd1             <= controle(4);
-  aux_sel_mux_mem_alu            <= controle(5);   
-  aux_crtl_w1                    <= controle(6);   
-  aux_crtl_w2                    <= controle(7);   
-  aux_en_reg_A                   <= controle(8);
-  aux_en_reg_B                   <= controle(9);
-  aux_sel_mux_rgbk_A             <= controle(10);
-  aux_sel_mux_rgbk_B             <= controle(11);
-  aux_crtl_memd_wd               <= controle(12);
-  aux_jump                       <= controle(13);
-  aux_branch                     <= controle(14);
-  aux_sel_mux_pc1                <= controle(15);
-  aux_we_pc                      <= controle(16);
+  aux_ula_ctrl(0 to 3)       <= controle(0 to 3);
+  aux_sel_mux_in_wa1             <= controle(4);
+  aux_sel_mux_in_wd1             <= controle(5);
+  aux_sel_mux_mem_alu            <= controle(6);   
+  aux_crtl_w1                    <= controle(7);   
+  aux_crtl_w2                    <= controle(8);   
+  aux_en_reg_A                   <= controle(9);
+  aux_en_reg_B                   <= controle(10);
+  aux_sel_mux_rgbk_A             <= controle(11);
+  aux_sel_mux_rgbk_B             <= controle(12);
+  aux_crtl_memd_wd               <= controle(13);
+  aux_jump                       <= controle(14);
+  aux_branch                     <= controle(15);
+  aux_sel_mux_pc1                <= controle(16);
+  aux_we_pc                      <= controle(17);
   aux_sel_mux_pc2                <= (aux_jump) OR ((aux_branch) AND (aux_flag_zero));
 
   saida <= aux_data_rd1;
