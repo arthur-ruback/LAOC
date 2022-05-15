@@ -21,6 +21,6 @@ end extensor;
 architecture dataflow of extensor is
 	signal extensao : std_logic_vector(0 to (largura_saida - largura_dado - 1));
 begin
-	extensao <= (others => entrada_Rs(largura_dado - 1)); -- todos os bits da extensão correspondem ao bit mais significativo da entrada Rs
+	extensao <= (others => entrada_Rs(0)); -- todos os bits da extensão correspondem ao bit mais significativo da entrada Rs
 	saida    <= extensao & entrada_Rs;                    -- saida com o sinal estendido de Rs, concatenado com Rs. 
 end dataflow;

@@ -21,22 +21,42 @@ entity memi is
 end entity;
 
 architecture comportamental of memi is
-	type rom_type is array (0 to 2 ** MI_ADDR_WIDTH - 1) of std_logic_vector(0 to INSTR_WIDTH - 1);
-	signal rom : rom_type;
+	type memory_t is array (0 to 2 ** MI_ADDR_WIDTH - 1) of std_logic_vector(0 to INSTR_WIDTH - 1);
+	
+	function init_rom
+		return memory_t is 
+		variable tmp : memory_t := (others => (others => '0'));
+	begin 
+		tmp := (					-- exemplo de uma instrução qualquer de 16 bits (4 símbos em hexadecimal)
+				--0      => X"4064", -- LI1 100
+				--1      => X"4FA3", -- LI2 -93
+				--2      => X"0980", -- ADD r3
+				0 => X"4008",
+				1 => X"5800",
+				2 => X"0C80",
+				3 => X"4001",
+				4 => X"5800",
+				5 => X"0D00",
+				6 => X"4001",
+				7 => X"5800",
+				8 => X"0A00",
+				9 => X"64D0",
+				10 => X"7500",
+				11 => X"64A0",
+				12 => X"9C80",
+				13 => X"6480",
+				14 => X"1FFA",
+				15 => X"7800",
+				others => X"0000"
+				);
+		return tmp;
+	end init_rom;
+	
+	signal rom : memory_t := init_rom;
 begin
-	process (clk, reset) is
+	process (Endereco) is
 	begin
-		if (rising_edge(clk)) then
-			if (reset = '1') then
-				rom <= (					-- exemplo de uma instrução qualquer de 16 bits (4 símbos em hexadecimal)
-					0      => X"4064", -- LI1 100
-					1      => X"4FA3", -- LI2 -93
-					2      => X"0980", -- ADD r3
-					others => X"0000"
-					);
-			else
-				Instrucao <= rom(to_integer(unsigned(Endereco)));
-			end if;
-		end if;
+		Instrucao <= rom(to_integer(unsigned(Endereco)));
 	end process;
 end comportamental;
+

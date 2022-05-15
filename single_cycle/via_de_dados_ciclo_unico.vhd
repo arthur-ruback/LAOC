@@ -6,6 +6,7 @@
 
 library IEEE;
 use IEEE.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity via_de_dados_ciclo_unico is
   generic (
@@ -120,6 +121,13 @@ architecture comportamento of via_de_dados_ciclo_unico is
       saida : out std_logic_vector(0 to (data_width - 1))
     );
   end component;
+  
+  component barrel_shift_x2 is
+  port (
+		entrada : in std_logic_vector(0 to 15);
+		saida : out std_logic_vector(0 to 15)
+	);
+	end component;
 
   -- Declare todos os sinais auxiliares que serão necessários na sua via_de_dados_ciclo_unico a partir deste comentário.
   -- Você só deve declarar sinais auxiliares se estes forem usados como "fios" para interligar componentes.
@@ -145,6 +153,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
 
   signal aux_in_sign_ext : std_logic_vector(0 to 10);
   signal aux_signExt_out : std_logic_vector(0 to data_width - 1);
+  signal aux_signExt_out_x2 : std_logic_vector(0 to data_width - 1);
 
   signal aux_funct : std_logic_vector(0 to 2);
 
@@ -353,11 +362,17 @@ architecture comportamento of via_de_dados_ciclo_unico is
     entrada_b => (x"0002"),
     saida => aux_pc_plus
   );
+  
+  instancia_barrel_shift : barrel_shift_x2 -- desloca 1 bit pois pc endereça cada byte
+  port map(
+		entrada => aux_signExt_out,
+		saida => aux_signExt_out_x2
+	);
 
   instancia_somador_imediate : somador
   port map(
     entrada_a => aux_pc_plus,
-    entrada_b => aux_signExt_out,
+    entrada_b => aux_signExt_out_x2, 
     saida => aux_branch_pc
   );
 
