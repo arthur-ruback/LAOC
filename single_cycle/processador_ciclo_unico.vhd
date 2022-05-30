@@ -23,7 +23,11 @@ entity processador_ciclo_unico is
     --		Chave_enter				: in std_logic;
     Leds_vermelhos_saida : out std_logic_vector(0 to DATA_WIDTH - 1);
     Chave_reset : in std_logic;
-    Clock : in std_logic
+    Clock_in : in std_logic;
+	 disp0 : out std_logic_vector(0 to 6);
+	 disp1 : out std_logic_vector(0 to 6);
+	 disp2 : out std_logic_vector(0 to 6);
+	 disp3 : out std_logic_vector(0 to 6)
   );
 end processador_ciclo_unico;
 
@@ -47,6 +51,18 @@ architecture comportamento of processador_ciclo_unico is
       pc_out : out std_logic_vector (0 to PC_WIDTH - 1);
       saida : out std_logic_vector (0 to DATA_WIDTH - 1)
     );
+  end component;
+  
+  component digi_clk is
+  port(clk1: in std_logic;
+		clk:out std_logic);
+  end component;
+  
+  component to_7seg is
+  port(
+		A : in  STD_LOGIC_VECTOR (0 to 3);
+      seg7 : out  STD_LOGIC_VECTOR (0 to 6)
+  );
   end component;
 
   component unidade_de_controle_ciclo_unico is
@@ -87,6 +103,8 @@ architecture comportamento of processador_ciclo_unico is
   signal aux_instrucao : std_logic_vector(0 to PROC_INSTR_WIDTH - 1);
   signal aux_controle : std_logic_vector(0 to DP_CTRL_BUS_WIDTH - 1);
   signal aux_endereco : std_logic_vector(0 to PROC_ADDR_WIDTH - 1);
+  signal aux_saida : std_logic_vector(0 to 15);
+  signal Clock : std_logic;
 
 begin
   -- A partir deste comentário instancie todos o componentes que serão usados no seu processador_ciclo_unico.
@@ -97,7 +115,13 @@ begin
   -- atribuição deve aparecer um dos sinais ("fios") que você definiu anteriormente, ou uma das entradas da entidade processador_ciclo_unico,
   -- ou ainda uma das saídas da entidade processador_ciclo_unico.
   -- Veja os exemplos de instanciação a seguir:
-
+  
+  clock_divider : digi_clk
+  port map(
+		clk1 => clock_in,
+		clk => Clock
+  );
+  
   instancia_memi : memi
   port map(
     clk => Clock,
@@ -121,7 +145,33 @@ begin
     controle => aux_controle,
     instrucao => aux_instrucao,
     pc_out => aux_endereco,
-    saida => Leds_vermelhos_saida
+    saida => aux_saida
+  );
+  
+  Leds_vermelhos_saida <= aux_saida;
+  
+  seg0 : to_7seg
+  port map(
+		A => aux_saida(0 to 3),
+		seg7 => disp0(0 to 6)
+  );
+  
+  seg1 : to_7seg
+  port map(
+		A => aux_saida(4 to 7),
+		seg7 => disp1(0 to 6)
+  );
+  
+  seg2 : to_7seg
+  port map(
+		A => aux_saida(8 to 11),
+		seg7 => disp2(0 to 6)
+  );
+  
+  seg3 : to_7seg
+  port map(
+		A => aux_saida(12 to 15),
+		seg7 => disp3(0 to 6)
   );
   
 end comportamento;

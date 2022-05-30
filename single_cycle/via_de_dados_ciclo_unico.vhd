@@ -234,7 +234,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
   aux_we_pc                      <= controle(17);
   aux_sel_mux_pc2                <= (aux_jump) OR ((aux_branch) AND (aux_flag_zero));
 
-  saida <= aux_data_rd1;
+  saida <= instrucao;
   pc_out <= aux_pc_out;
 
   -- A partir deste comentário instancie todos o componentes que serão usados na sua via_de_dados_ciclo_unico.
