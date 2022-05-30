@@ -118,7 +118,7 @@ begin
   
   clock_divider : digi_clk
   port map(
-		clk1 => clock_in,
+		clk1 => Clock_in,
 		clk => Clock
   );
   

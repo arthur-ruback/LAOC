@@ -17,7 +17,7 @@ architecture estimulos of tb_processador_ciclo_unico is
 	component processador_ciclo_unico
 		port (
 			Chave_reset : in std_logic; 
-			Clock   : in std_logic
+			Clock_in   : in std_logic
 		);
 	end component;
 
@@ -31,7 +31,7 @@ architecture estimulos of tb_processador_ciclo_unico is
 	constant OFFSET     : time := 5 ns;
 begin
 	-- instancia o componente 
-	instancia : processador_ciclo_unico port map(Clock => clk, Chave_reset => rst);
+	instancia : processador_ciclo_unico port map(Clock_in => clk, Chave_reset => rst);
 	
 	rst <= '1', '0' after 100 ns;		
 	
