@@ -128,6 +128,15 @@ architecture comportamento of via_de_dados_ciclo_unico is
 		saida : out std_logic_vector(0 to 15)
 	);
 	end component;
+	
+	component issp is
+		port (
+			source : out std_logic_vector(15 downto 0);                    -- source
+			probe  : in  std_logic_vector(15 downto 0) := (others => 'X')  -- probe
+		);
+	end component issp;
+	
+	
 
   -- Declare todos os sinais auxiliares que serão necessários na sua via_de_dados_ciclo_unico a partir deste comentário.
   -- Você só deve declarar sinais auxiliares se estes forem usados como "fios" para interligar componentes.
@@ -246,6 +255,13 @@ architecture comportamento of via_de_dados_ciclo_unico is
   -- ou ainda uma das saídas da entidade via_de_dados_ciclo_unico.
   -- Veja os exemplos de instanciação a seguir:
 
+  	u0 : component issp
+		port map (
+			-- sources.source
+			probe  => aux_novo_pc   --  probes.probe
+		);
+
+  
   aux_data_wd2 <= aux_ula_out_HI;
 
   instancia_ula1 : ula_mod

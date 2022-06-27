@@ -19,7 +19,7 @@ process(clk1)
 	begin
 		if(rising_edge(clk1)) then
 			count <=count+1;
-			if(count = 15-1) then
+			if(count = 150000000-1) then
 				b <= not b;
 				count <=0;
 			end if;
