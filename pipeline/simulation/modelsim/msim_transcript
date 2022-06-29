@@ -1,0 +1,699 @@
+# do processador_pipeline_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet work rtl_work 
+# Copying E:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied E:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:46 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity banco_registradores_mod
+# -- Compiling architecture comportamental of banco_registradores_mod
+# End time: 20:36:47 on Jun 29,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:47 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity via_de_dados_ciclo_unico
+# -- Compiling architecture comportamento of via_de_dados_ciclo_unico
+# End time: 20:36:47 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/unidade_de_controle_ciclo_unico.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:47 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/unidade_de_controle_ciclo_unico.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity unidade_de_controle_ciclo_unico
+# -- Compiling architecture beh of unidade_de_controle_ciclo_unico
+# End time: 20:36:47 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/ula_mod.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:47 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/ula_mod.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ula_mod
+# -- Compiling architecture comportamental of ula_mod
+# End time: 20:36:47 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/to_7seg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:47 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/to_7seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity to_7seg
+# -- Compiling architecture Behavioral of to_7seg
+# End time: 20:36:47 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/somador.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:47 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/somador.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity somador
+# -- Compiling architecture dataflow of somador
+# End time: 20:36:47 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/registrador.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:47 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/registrador.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity registrador
+# -- Compiling architecture comportamental of registrador
+# End time: 20:36:47 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:47 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity processador_ciclo_unico
+# -- Compiling architecture comportamento of processador_ciclo_unico
+# End time: 20:36:47 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/pc.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:47 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/pc.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity pc
+# -- Compiling architecture comportamental of pc
+# End time: 20:36:47 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/mux21.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:47 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/mux21.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture dataflow of mux21
+# End time: 20:36:48 on Jun 29,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memi.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:48 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memi.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memi
+# -- Compiling architecture comportamental of memi
+# ** Warning: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memi.vhd(51): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
+# 
+# End time: 20:36:48 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memd.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:48 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memd.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity memd
+# -- Compiling architecture rtl of memd
+# End time: 20:36:48 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/extensor.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:48 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/extensor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity extensor
+# -- Compiling architecture dataflow of extensor
+# End time: 20:36:48 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/digi_clk.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:48 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/digi_clk.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity digi_clk
+# -- Compiling architecture Behavioral of digi_clk
+# End time: 20:36:48 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/barrel_shift_x2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:48 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/barrel_shift_x2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity barrel_shift_x2
+# -- Compiling architecture dataflow of barrel_shift_x2
+# End time: 20:36:48 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/tb_processador_ciclo_unico.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 20:36:48 on Jun 29,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/tb_processador_ciclo_unico.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_processador_ciclo_unico
+# -- Compiling architecture estimulos of tb_processador_ciclo_unico
+# End time: 20:36:48 on Jun 29,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  tb_processador_ciclo_unico
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" tb_processador_ciclo_unico 
+# Start time: 20:36:48 on Jun 29,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_processador_ciclo_unico(estimulos)
+# Loading work.processador_ciclo_unico(comportamento)
+# Loading work.digi_clk(behavioral)
+# Loading work.memi(comportamental)
+# Loading work.unidade_de_controle_ciclo_unico(beh)
+# Loading work.via_de_dados_ciclo_unico(comportamento)
+# Loading work.ula_mod(comportamental)
+# Loading work.banco_registradores_mod(comportamental)
+# Loading work.memd(rtl)
+# Loading work.mux21(dataflow)
+# Loading work.registrador(comportamental)
+# Loading work.pc(comportamental)
+# Loading work.extensor(dataflow)
+# Loading work.somador(dataflow)
+# Loading work.barrel_shift_x2(dataflow)
+# Loading work.to_7seg(behavioral)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/instancia_banco_registradores
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/instancia_banco_registradores
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_processador_ciclo_unico/instancia/instancia_memi
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 15 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 35 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 55 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 75 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 95 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 115 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 40975 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 81835 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 122695 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 163555 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 204415 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245275 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 286135 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 326995 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 367855 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 408715 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 449575 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 490435 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 531295 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 572155 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 613015 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 653875 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 694735 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 735595 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 776455 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 817315 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 858175 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 899035 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 939895 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 980755 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1021615 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1062475 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1103335 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1144195 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1185055 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1225915 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1266775 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1307635 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1348495 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1389355 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1430215 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1471075 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1511935 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1552795 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1593655 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1634515 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1675375 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1716235 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1757095 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1797955 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1838815 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1879675 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1920535 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1961395 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2002255 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2043115 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2083975 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2124835 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2165695 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2206555 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2247415 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2288275 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2329135 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2369995 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2410855 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2451715 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2492575 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2533435 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2574295 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2615155 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2656015 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2696875 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2737735 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2778595 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2819455 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2860315 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2901175 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2942035 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2982895 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3023755 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3064615 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3105475 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3146335 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3187195 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3228055 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3268915 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3309775 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3350635 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3391495 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3432355 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3473215 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3514075 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3554935 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3595795 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3636655 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3677515 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3718375 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3759235 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3800095 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3840955 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3881815 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3922675 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3963535 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4004395 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4045255 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4086115 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4126975 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4167835 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4208695 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4249555 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4290415 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4331275 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4372135 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4412995 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4453855 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4494715 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4535575 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4576435 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4617295 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4658155 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4699015 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4739875 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4780735 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4821595 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4862455 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4903315 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4944175 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 4985035 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5025895 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5066755 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5107615 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5148475 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5189335 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5230195 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5271055 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5311915 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5352775 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5393635 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5434495 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5475355 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5516215 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5557075 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5597935 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5638795 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5679655 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5720515 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5761375 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5802235 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5843095 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5883955 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5924815 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5965675 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6006535 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6047395 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6088255 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6129115 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6169975 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6210835 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6251695 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6292555 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6333415 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6374275 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6415135 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6455995 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6496855 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6537715 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6578575 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6619435 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6660295 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6701155 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6742015 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6782875 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6823735 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6864595 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6905455 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6946315 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 6987175 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7028035 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7068895 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7109755 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7150615 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7191475 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7232335 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7273195 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7314055 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7354915 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7395775 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7436635 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7477495 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7518355 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7559215 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7600075 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7640935 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7681795 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7722655 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7763515 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7804375 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7845235 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7886095 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7926955 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 7967815 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8008675 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8049535 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8090395 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8131255 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8172115 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8212975 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8253835 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8294695 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8335555 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8376415 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8417275 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8458135 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8498995 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8539855 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8580715 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8621575 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8662435 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 8703295 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+add wave -position insertpoint  \
+sim:/tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/instancia_banco_registradores/banco
+add wave -position insertpoint  \
+sim:/tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/instancia_pc/saida
+restart
+run 1000 ns
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/instancia_banco_registradores
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/instancia_banco_registradores
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /tb_processador_ciclo_unico/instancia/instancia_memi
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 15 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 35 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 55 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 75 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 95 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 115 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem

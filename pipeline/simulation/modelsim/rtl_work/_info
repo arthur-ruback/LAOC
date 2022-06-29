@@ -1,0 +1,650 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/simulation/modelsim
+Ebanco_registradores_mod
+Z1 w1656544304
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd
+Z6 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd
+l0
+L14
+VKYcaBiALR50dg4cT2NmbZ3
+!s100 Kl]9WEelWCbJoS9E<PM]O0
+Z7 OV;C;10.4b;61
+31
+Z8 !s110 1656545807
+!i10b 1
+Z9 !s108 1656545806.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd|
+Z11 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1
+Acomportamental
+R2
+R3
+R4
+DEx4 work 23 banco_registradores_mod 0 22 KYcaBiALR50dg4cT2NmbZ3
+l36
+L33
+VPDMmeaoQLWHFn_`HH[R`63
+!s100 `1KQlL3T9g?l<f`9A2Kgg3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ebarrel_shift_x2
+R1
+R3
+R4
+R0
+Z14 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/barrel_shift_x2.vhd
+Z15 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/barrel_shift_x2.vhd
+l0
+L4
+VlR^_YInJJXJl1d`D5KT950
+!s100 hI24jlgBUWIEVal5hll`12
+R7
+31
+Z16 !s110 1656545808
+!i10b 1
+Z17 !s108 1656545808.000000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/barrel_shift_x2.vhd|
+Z19 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/barrel_shift_x2.vhd|
+!i113 1
+R12
+R13
+Adataflow
+R3
+R4
+DEx4 work 15 barrel_shift_x2 0 22 lR^_YInJJXJl1d`D5KT950
+l16
+L15
+VjViW1gagXOUKe<lfg9LUj0
+!s100 WRQ[;Amom:3`M>obz0e^Q2
+R7
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R12
+R13
+Edigi_clk
+Z20 w1656545733
+R3
+R4
+R0
+Z21 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/digi_clk.vhd
+Z22 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/digi_clk.vhd
+l0
+L5
+V1DNT1gjVz=V<@]M6b^1iU3
+!s100 _<@6[OI]VzT<8=7XEnFER2
+R7
+31
+R16
+!i10b 1
+R17
+Z23 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/digi_clk.vhd|
+Z24 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/digi_clk.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R3
+R4
+DEx4 work 8 digi_clk 0 22 1DNT1gjVz=V<@]M6b^1iU3
+l15
+L11
+VTYgn;E_B8EiVXc1<^8UIJ0
+!s100 3Qg@Uc03RJ7ooIQN2bL6F3
+R7
+31
+R16
+!i10b 1
+R17
+R23
+R24
+!i113 1
+R12
+R13
+Eextensor
+R1
+R3
+R4
+R0
+Z25 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/extensor.vhd
+Z26 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/extensor.vhd
+l0
+L9
+Vdfb:adEj^;jRkJSPhdOJ91
+!s100 i^WWaNjO>zO5XeS=Xg2H11
+R7
+31
+R16
+!i10b 1
+R17
+Z27 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/extensor.vhd|
+Z28 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/extensor.vhd|
+!i113 1
+R12
+R13
+Adataflow
+R3
+R4
+DEx4 work 8 extensor 0 22 dfb:adEj^;jRkJSPhdOJ91
+l23
+L21
+VZDLMHni<ULiG8;<]mYSko0
+!s100 DH;ElR@@LDMAkk`67b7R;1
+R7
+31
+R16
+!i10b 1
+R17
+R27
+R28
+!i113 1
+R12
+R13
+Ememd
+R1
+R2
+R3
+R4
+R0
+Z29 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memd.vhd
+Z30 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memd.vhd
+l0
+L8
+V3C4@ndB9[5Y^kDUTF9?EU2
+!s100 ;Z6;CcZMAg;cN59dbZiSn0
+R7
+31
+R16
+!i10b 1
+R17
+Z31 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memd.vhd|
+Z32 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memd.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+R4
+DEx4 work 4 memd 0 22 3C4@ndB9[5Y^kDUTF9?EU2
+l38
+L26
+Ve^;;>`AGgSoh>H]C3[f_O0
+!s100 cP4RVSDGElBCUWAoQM?1B0
+R7
+31
+R16
+!i10b 1
+R17
+R31
+R32
+!i113 1
+R12
+R13
+Ememi
+R1
+R2
+R3
+R4
+R0
+Z33 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memi.vhd
+Z34 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memi.vhd
+l0
+L10
+Vc__F<fHkh0>=V_n8baOcF1
+!s100 Qdo_IzB<NP1;P`bIkHU:L1
+R7
+31
+R16
+!i10b 1
+R17
+Z35 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memi.vhd|
+Z36 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memi.vhd|
+!i113 1
+R12
+R13
+Acomportamental
+R2
+R3
+R4
+DEx4 work 4 memi 0 22 c__F<fHkh0>=V_n8baOcF1
+l57
+L23
+VEdjF7n3g[=jN<6_:D6Q[@3
+!s100 WGW9aQzJcIgK3z<[gA2?F0
+R7
+31
+R16
+!i10b 1
+R17
+R35
+R36
+!i113 1
+R12
+R13
+Emux21
+Z37 w1651854786
+R3
+R4
+R0
+Z38 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/mux21.vhd
+Z39 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/mux21.vhd
+l0
+L9
+V>6KOjXS^5ZR0700eUALlZ1
+!s100 0DhP@B1O;Ed_]mdm:ALYX0
+R7
+31
+R16
+!i10b 1
+Z40 !s108 1656545807.000000
+Z41 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/mux21.vhd|
+Z42 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/mux21.vhd|
+!i113 1
+R12
+R13
+Adataflow
+R3
+R4
+DEx4 work 5 mux21 0 22 >6KOjXS^5ZR0700eUALlZ1
+l21
+L20
+VdKeMXZFbBjIUP:af[?VW<0
+!s100 407D`d:TT=9kU5IdIT49M2
+R7
+31
+R16
+!i10b 1
+R40
+R41
+R42
+!i113 1
+R12
+R13
+Epc
+R37
+R3
+R4
+R0
+Z43 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/pc.vhd
+Z44 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/pc.vhd
+l0
+L9
+VjoSi>bICU[37dHJfbN[MM1
+!s100 71YBFajc@6OCU>l=Pi>:O1
+R7
+31
+R8
+!i10b 1
+R40
+Z45 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/pc.vhd|
+Z46 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/pc.vhd|
+!i113 1
+R12
+R13
+Acomportamental
+R3
+R4
+DEx4 work 2 pc 0 22 joSi>bICU[37dHJfbN[MM1
+l23
+L22
+VS6@3UmcGkNNlfZehF9M@]0
+!s100 9NXdbT0A>z67HmGMoIjie1
+R7
+31
+R8
+!i10b 1
+R40
+R45
+R46
+!i113 1
+R12
+R13
+Eprocessador_ciclo_unico
+R1
+R3
+R4
+R0
+Z47 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd
+Z48 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd
+l0
+L13
+V2_f<D_fS`MiP15]mWaBnQ0
+!s100 ggNGkVSOaMDiEjjcLha6Y0
+R7
+31
+R8
+!i10b 1
+R40
+Z49 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd|
+Z50 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd|
+!i113 1
+R12
+R13
+Acomportamento
+R3
+R4
+DEx4 work 23 processador_ciclo_unico 0 22 2_f<D_fS`MiP15]mWaBnQ0
+l109
+L34
+V@g[jhzhNiS0njgO7BB7>K2
+!s100 WBKEARKoCb@PWoc9PlJB43
+R7
+31
+R8
+!i10b 1
+R40
+R49
+R50
+!i113 1
+R12
+R13
+Eregistrador
+R37
+R3
+R4
+R0
+Z51 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/registrador.vhd
+Z52 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/registrador.vhd
+l0
+L9
+V@j@=dK?_IE3V=VDF1[RXd3
+!s100 [Yie:jJ`D4Pij2Uca6MNC0
+R7
+31
+R8
+!i10b 1
+R40
+Z53 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/registrador.vhd|
+Z54 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/registrador.vhd|
+!i113 1
+R12
+R13
+Acomportamental
+R3
+R4
+DEx4 work 11 registrador 0 22 @j@=dK?_IE3V=VDF1[RXd3
+l21
+L20
+VRlO4`NRzfZYHjW=7gTIX@2
+!s100 >a0^n[fH>_gA9Ph63BYo70
+R7
+31
+R8
+!i10b 1
+R40
+R53
+R54
+!i113 1
+R12
+R13
+Esomador
+R37
+R2
+R3
+R4
+R0
+Z55 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/somador.vhd
+Z56 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/somador.vhd
+l0
+L10
+VeE3CUoDKddYKjF1NAZ9oi1
+!s100 nTBn:3WWUZn?AH;1@OoY@1
+R7
+31
+R8
+!i10b 1
+R40
+Z57 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/somador.vhd|
+Z58 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/somador.vhd|
+!i113 1
+R12
+R13
+Adataflow
+R2
+R3
+R4
+DEx4 work 7 somador 0 22 eE3CUoDKddYKjF1NAZ9oi1
+l23
+L22
+VF=1<Hf`[>>ekcU<;;OJ4]2
+!s100 8O4jTd5XOh@hMF532^I]g3
+R7
+31
+R8
+!i10b 1
+R40
+R57
+R58
+!i113 1
+R12
+R13
+Etb_processador_ciclo_unico
+R1
+R2
+R3
+R4
+R0
+Z59 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/tb_processador_ciclo_unico.vhd
+Z60 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/tb_processador_ciclo_unico.vhd
+l0
+L11
+V8?;01kbi@NRPB0ZdI6noP2
+!s100 J3ZD24ogDUhfA?;:9i8??0
+R7
+31
+R16
+!i10b 1
+R17
+Z61 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/tb_processador_ciclo_unico.vhd|
+Z62 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/tb_processador_ciclo_unico.vhd|
+!i113 1
+R12
+R13
+Aestimulos
+R2
+R3
+R4
+DEx4 work 26 tb_processador_ciclo_unico 0 22 8?;01kbi@NRPB0ZdI6noP2
+l32
+L14
+VVL1Fe2k`RC3cP;XD4mmFc3
+!s100 T2OUCR_oYWoWWFgPaz_lE2
+R7
+31
+R16
+!i10b 1
+R17
+R61
+R62
+!i113 1
+R12
+R13
+Eto_7seg
+R1
+R3
+R4
+R0
+Z63 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/to_7seg.vhd
+Z64 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/to_7seg.vhd
+l0
+L4
+VP>Hf`eKNdEiVj28aijZX11
+!s100 ZUzDBDO]5Cnm6Z_Ii:iKT1
+R7
+31
+R8
+!i10b 1
+R40
+Z65 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/to_7seg.vhd|
+Z66 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/to_7seg.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R3
+R4
+DEx4 work 7 to_7seg 0 22 P>Hf`eKNdEiVj28aijZX11
+l12
+L10
+VaJbbRFOEeL29o0W6Bm<SV2
+!s100 3ca@4bSiN1>MXl:PdX:K_2
+R7
+31
+R8
+!i10b 1
+R40
+R65
+R66
+!i113 1
+R12
+R13
+Eula_mod
+R1
+R2
+R3
+R4
+R0
+Z67 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/ula_mod.vhd
+Z68 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/ula_mod.vhd
+l0
+L11
+VVO]iFlZoHo@m_:[XU68il2
+!s100 Yh9ge@9H[j`P;i:<EW1e52
+R7
+31
+R8
+!i10b 1
+R40
+Z69 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/ula_mod.vhd|
+Z70 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/ula_mod.vhd|
+!i113 1
+R12
+R13
+Acomportamental
+R2
+R3
+R4
+DEx4 work 7 ula_mod 0 22 VO]iFlZoHo@m_:[XU68il2
+l29
+L26
+V;c<_6lWkbE<2661JRNCaG1
+!s100 z8X_DkP??;cLW=l<U82Tb1
+R7
+31
+R8
+!i10b 1
+R40
+R69
+R70
+!i113 1
+R12
+R13
+Eunidade_de_controle_ciclo_unico
+R1
+R2
+R3
+R4
+R0
+Z71 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/unidade_de_controle_ciclo_unico.vhd
+Z72 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/unidade_de_controle_ciclo_unico.vhd
+l0
+L12
+Vm8zaWg<969D_a=j=DG@h`3
+!s100 N6SDlSk[5Xfz1hH=L:cSV3
+R7
+31
+R8
+!i10b 1
+R40
+Z73 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/unidade_de_controle_ciclo_unico.vhd|
+Z74 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/unidade_de_controle_ciclo_unico.vhd|
+!i113 1
+R12
+R13
+Abeh
+R2
+R3
+R4
+DEx4 work 31 unidade_de_controle_ciclo_unico 0 22 m8zaWg<969D_a=j=DG@h`3
+l35
+L25
+VWo4Z;5YQJf@SQ[fhdzTeC2
+!s100 ]zm=<GBQg<e5Ng6K=:a=A1
+R7
+31
+R8
+!i10b 1
+R40
+R73
+R74
+!i113 1
+R12
+R13
+Evia_de_dados_ciclo_unico
+Z75 w1656545234
+R2
+R3
+R4
+R0
+Z76 8C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd
+Z77 FC:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd
+l0
+L11
+VBe3R2kiTUPbA?^hd2P]PE3
+!s100 W4o@WCF:RKP9FB`?RoIKK0
+R7
+31
+R8
+!i10b 1
+R40
+Z78 !s90 -reportprogress|300|-93|-work|work|C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd|
+Z79 !s107 C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd|
+!i113 1
+R12
+R13
+Acomportamento
+R2
+R3
+R4
+DEx4 work 24 via_de_dados_ciclo_unico 0 22 Be3R2kiTUPbA?^hd2P]PE3
+l204
+L32
+V]P=QP`nEMAE4N[3W?>M<F1
+!s100 C[ke2jIf3GT0]AE:kl2TQ3
+R7
+31
+R8
+!i10b 1
+R40
+R78
+R79
+!i113 1
+R12
+R13
