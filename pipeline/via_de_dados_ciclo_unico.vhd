@@ -3,7 +3,6 @@
 -- Departamento de Engenharia Eletrônica
 -- Autoria: Professor Ricardo de Oliveira Duarte
 -- Via de dados do processador_ciclo_unico
-
 library IEEE;
 use IEEE.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -136,6 +135,8 @@ architecture comportamento of via_de_dados_ciclo_unico is
   -- Os sinais auxiliares devem ser compatíveis com o mesmo tipo (std_logic, std_logic_vector, etc.) e o mesmo tamanho dos sinais dos portos dos
   -- componentes onde serão usados.
   -- Veja os exemplos abaixo:
+  
+  -- sinais relativos ao banco de registradores
   signal aux_addr_rd1 : std_logic_vector(0 to fr_addr_width - 1);
   signal aux_addr_rd2 : std_logic_vector(0 to fr_addr_width - 1);
   signal aux_addr_wd1 : std_logic_vector(0 to fr_addr_width - 1);
@@ -146,55 +147,68 @@ architecture comportamento of via_de_dados_ciclo_unico is
   signal aux_data_wd2 : std_logic_vector(0 to data_width - 1);
   signal aux_crtl_w1 : std_logic;
   signal aux_crtl_w2 : std_logic;
-
+	
+  -- sinais relativos a ULA
   signal aux_alu_in_A : std_logic_vector(0 to data_width - 1);
   signal aux_alu_in_B : std_logic_vector(0 to data_width - 1);
   signal aux_ula_ctrl : std_logic_vector(0 to ula_ctrl_width - 1);
   signal aux_ula_out_HI : std_logic_vector(0 to data_width - 1);
   signal aux_ula_out_LO : std_logic_vector(0 to data_width - 1);
-
+  signal aux_flag_zero       : std_logic;
+	
+  --sinais relativos ao extensor com sinal
   signal aux_in_sign_ext : std_logic_vector(0 to 10);
   signal aux_signExt_out : std_logic_vector(0 to data_width - 1);
   signal aux_signExt_out_x2 : std_logic_vector(0 to data_width - 1);
 
   signal aux_funct : std_logic_vector(0 to 2);
-
+  
+  -- sinais relativos aos registradores de operacao
   signal aux_in_reg_A : std_logic_vector(0 to data_width - 1);
   signal aux_in_reg_B : std_logic_vector(0 to data_width - 1);
   signal aux_en_reg_A : std_logic;
   signal aux_en_reg_B : std_logic;
-
-  signal aux_memd_out        : std_logic_vector(0 to data_width - 1);
-  signal aux_out_mux_mem_alu : std_logic_vector(0 to data_width - 1);
-  signal aux_in_mux_wa1      : std_logic_vector(0 to data_width - 1);
-
-  signal aux_rd2_plus_funct : std_logic_vector(0 to data_width - 1);
-
-  signal aux_flag_zero       : std_logic;
-
+  
+  -- sinal do mux logo antes dos regisradores A e B
   signal aux_sel_mux_rgbk_A  : std_logic;
   signal aux_sel_mux_rgbk_B  : std_logic;
+  
+  -- sinais ligados a memoria de dados
+  signal aux_memd_out        : std_logic_vector(0 to data_width - 1);
+  signal aux_in_mux_wa1      : std_logic_vector(0 to data_width - 1);
+  signal aux_crtl_memd_wd 	  : std_logic;
 
+  -- sinal utilizado para calcular o endereco no jump
+  signal aux_rd2_plus_funct : std_logic_vector(0 to data_width - 1);
+
+  -- sinais dos multiplexadores antes do banco de registradores
   signal aux_sel_mux_in_wa1  : std_logic;
   signal aux_sel_mux_in_wd1  : std_logic;
   signal aux_sel_mux_mem_alu : std_logic;
-  signal aux_sel_mux_pc2     : std_logic;
+  signal aux_out_mux_mem_alu : std_logic_vector(0 to data_width - 1);
+  
 
-  signal aux_crtl_memd_wd : std_logic;
-
+  -- sinais para controle de branch e jump
   signal aux_branch : std_logic;
   signal aux_jump   : std_logic;
+  signal aux_branch_red : std_logic;
+  signal aux_jump_red : std_logic;
 
-  signal aux_out_mux_pc1      : std_logic_vector(0 to pc_width - 1);
+  -- sinais mux do MPC, mais à esquerda no deseho
+  signal aux_out_mux_pc1      : std_logic_vector(0 to pc_width - 1); 
+  signal aux_sel_mux_pc1 : std_logic;
+  signal aux_branch_pc   : std_logic_vector(0 to pc_width - 1); -- PC+2 + Sign ext
+  signal aux_rd1_plus_funct : std_logic_vector(0 to data_width - 1);
+  
+  -- sinais do mux logo antes do PC
+  signal aux_sel_mux_pc2     : std_logic;
+  signal aux_pc_plus     : std_logic_vector(0 to pc_width - 1);
+  
 
+  -- sinais ligados ao PC
   signal aux_pc_out      : std_logic_vector(0 to pc_width - 1);
   signal aux_novo_pc     : std_logic_vector(0 to pc_width - 1);
-  signal aux_pc_plus     : std_logic_vector(0 to pc_width - 1);
   signal aux_we_pc       : std_logic;
-  signal aux_branch_pc   : std_logic_vector(0 to pc_width - 1);
-  signal aux_sel_mux_pc1 : std_logic;
-
-  signal aux_rd1_plus_funct : std_logic_vector(0 to data_width - 1);
   
   -- o compilador do modelsim recusou atribuição direta de entrada_b
   -- foi preciso criar sinais novos

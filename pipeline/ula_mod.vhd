@@ -62,6 +62,7 @@ begin
     end case;
   end process alu_op;
   
+  
   proc_flag_zero: process (resultado_ula)
   begin
 	 if resultado_ula = x"00000000" then
