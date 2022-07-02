@@ -59,7 +59,6 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_processador_
 set_global_assignment -name EDA_TEST_BENCH_NAME tb_processador_ciclo_unico -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_processador_ciclo_unico
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_processador_ciclo_unico -section_id tb_processador_ciclo_unico
-set_global_assignment -name EDA_TEST_BENCH_FILE tb_processador_ciclo_unico.vhd -section_id tb_processador_ciclo_unico
 set_global_assignment -name VHDL_FILE banco_registradores_mod.vhd
 set_global_assignment -name VHDL_FILE via_de_dados_ciclo_unico.vhd
 set_global_assignment -name VHDL_FILE unidade_de_controle_ciclo_unico.vhd
@@ -81,4 +80,6 @@ set_global_assignment -name VHDL_FILE digi_clk.vhd
 set_global_assignment -name VHDL_FILE deslocador.vhd
 set_global_assignment -name VHDL_FILE barrel_shift_x2.vhd
 set_global_assignment -name VHDL_FILE banco_registradores.vhd
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1000 ns" -section_id tb_processador_ciclo_unico
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_processador_ciclo_unico.vhd -section_id tb_processador_ciclo_unico
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -27,7 +27,7 @@ architecture comportamental of ula_mod is
   signal resultado_ula : std_logic_vector(0 to (2 * largura_dado - 1));
   signal aux : std_logic_vector(0 to (largura_dado - 1));
 begin
-  alu_op: process (entrada_a, entrada_b, seletor, aux) is
+  process (entrada_a, entrada_b, seletor, aux) is
   begin
     case(seletor) is
       when "0000" => -- soma com sinal
@@ -60,17 +60,12 @@ begin
       when others =>
       resultado_ula <= (x"00000000");
     end case;
-  end process alu_op;
-  
-  proc_flag_zero: process (resultado_ula)
-  begin
-	 if resultado_ula = x"00000000" then
+    if resultado_ula = x"00000000" then
       flag_zero <= '1';
     else
       flag_zero <= '0';
     end if;
-  end process proc_flag_zero;
-  
+  end process;
   saida_hi <= resultado_ula(0 to largura_dado-1);
   saida_lo <= resultado_ula(largura_dado to (2 * largura_dado - 1));
 end comportamental;
