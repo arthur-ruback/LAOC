@@ -106,11 +106,23 @@ architecture comportamento of via_de_dados_ciclo_unico is
     );
   end component;
 
-  component registrador is
+  component mux41 is
+    generic (
+      largura_dado : natural
+    );
     port (
-      entrada_dados : in std_logic_vector(0 to 15);
+        dado_ent_0, dado_ent_1, dado_ent_2, dado_ent_3 : in std_logic_vector(0 to (largura_dado - 1));
+        sele_ent                                       : in std_logic_vector(0 to 1);
+        dado_sai                                       : out std_logic_vector(0 to (largura_dado - 1))
+    );
+  end component;
+
+  component registrador is
+	 generic(largura_dado: natural := 16);
+    port (
+      entrada_dados : in std_logic_vector(0 to largura_dado - 1);
       WE, clk, reset : in std_logic;
-      saida_dados : out std_logic_vector(0 to 15)
+      saida_dados : out std_logic_vector(0 to largura_dado - 1)
     );
   end component;
 
@@ -127,6 +139,17 @@ architecture comportamento of via_de_dados_ciclo_unico is
 		saida : out std_logic_vector(0 to 15)
 	);
 	end component;
+
+  component forwarding_unit is
+    port (instruction_0_4_red    : in std_logic_vector(0 to 4);
+    instruction_5_8        : in std_logic_vector(0 to 3);
+    instruction_9_12       : in std_logic_vector(0 to 3);
+    instruction_5_8_red    : in std_logic_vector(0 to 3);
+    instruction_9_12_red   : in std_logic_vector(0 to 3);
+    aux_sel_mux_for_A      : out std_logic_vector(0 to 1);
+    aux_sel_mux_for_B      : out std_logic_vector(0 to 1)
+    );
+  end component;
 	
 	
 
@@ -139,6 +162,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
   
   -- sinais relativos ao pipeline de partes da instrucao
   --vermelho, segundo estagio do pipeline
+  signal instruction_0_4_red : std_logic_vector(0 to 4); --campo de identificaçao da instrucao
   signal instruction_5_8_red : std_logic_vector(0 to 3); -- bits de 5 a 8 da instrucao: waddr1 ou addr1
   signal instruction_9_12_red : std_logic_vector(0 to 3); -- bits de 9 a 12 da instrucao: waddr2 ou addr2
   signal instruction_13_15_red : std_logic_vector(0 to 2); -- bits de 13 a 15 da instrucao: funct
@@ -188,7 +212,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
   --vermelhos, segundo estagio do pipeline
   signal aux_signExt_out_red : std_logic_vector(0 to data_width - 1);
 
-  signal aux_funct : std_logic_vector(0 to 2);
+  --signal aux_funct : std_logic_vector(0 to 2);
   
   -- sinais relativos aos registradores de operacao
   signal aux_in_reg_A : std_logic_vector(0 to data_width - 1);
@@ -213,7 +237,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
   --vermelhos, segundo estágio do pipeline
   signal aux_ctrl_memd_wd_red 	  : std_logic;
   --verdes, terceiro estagio do pipeline
-  signal aux_memd_out_green : std_logic_vector(0 to data_width - 1)
+  signal aux_memd_out_green : std_logic_vector(0 to data_width - 1);
 
   -- sinal utilizado para calcular o endereco no jump
   signal aux_rd2_plus_funct : std_logic_vector(0 to data_width - 1);
@@ -270,8 +294,8 @@ architecture comportamento of via_de_dados_ciclo_unico is
   signal foo : std_logic_vector(0 to 11);
 
   --sinais relativos ao registrador vermelho de pipeline
-  signal aux_in_ctrl_reg_red  : std_logic_vector(0 to 10);
-  signal aux_out_ctrl_reg_red : std_logic_vector(0 to 10);
+  signal aux_in_ctrl_reg_red  : std_logic_vector(0 to 13);
+  signal aux_out_ctrl_reg_red : std_logic_vector(0 to 13);
   signal aux_in_ctrl_reg_green  : std_logic_vector(0 to 4);
   signal aux_out_ctrl_reg_green : std_logic_vector(0 to 4);
 
@@ -293,7 +317,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
   aux_in_mux_wa1  <= x"000" & instruction_5_8_green; -- escreve somente no terceiro estagio verde de writeback
   aux_addr_wd2    <= instruction_9_12_green; -- usa smente no verde
   aux_in_sign_ext <= instrucao(5 to 15);
-  aux_funct       <= instrucao(13 to 15);
+  --aux_funct       <= instrucao(13 to 15);
   
 
   --==================
@@ -399,7 +423,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
 
   mux_rgbk_out_A : mux21
   port map(
-    dado_ent_0 => aux_data_rd1,
+    dado_ent_0 => aux_out_mux_for_A,
     dado_ent_1 => aux_signExt_out,
     sele_ent => aux_sel_mux_rgbk_A,
     dado_sai => aux_in_reg_A
@@ -407,7 +431,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
 
   mux_rgbk_out_B : mux21
   port map(
-    dado_ent_0 => aux_data_rd2,
+    dado_ent_0 => aux_out_mux_for_B,
     dado_ent_1 => aux_signExt_out,
     sele_ent => aux_sel_mux_rgbk_B,
     dado_sai => aux_in_reg_B
@@ -486,7 +510,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
 
   instancia_somador_imediate : somador
   port map(
-    entrada_a => aux_pc_plus,
+    entrada_a => aux_pc_plus_red,
     entrada_b => aux_signExt_out_x2, 
     saida => aux_branch_pc
   );
@@ -509,7 +533,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
 
   instancia_somador_funct_rd1 : somador
   port map(
-    entrada_a => aux_data_rd1,
+    entrada_a => aux_data_rd1_red,
     entrada_b => aux_entrada_b,
     saida => aux_rd1_plus_funct
   );
@@ -528,7 +552,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
   --=========================
 
   reg_controle_red : registrador
-  generic map (largura_dado = 14)
+  generic map (largura_dado => 14)
   port map(
     clk => clock,
     reset => reset,
@@ -537,68 +561,89 @@ architecture comportamento of via_de_dados_ciclo_unico is
     saida_dados => aux_out_ctrl_reg_red
   );
 
-  reg_RD2_red : registrador
-  generic map (largura_dado = 5)
+  reg_RD1_red : registrador
+  generic map (largura_dado => data_width)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => aux_data_rd1,
+    saida_dados => aux_data_rd1_red
   );
 
-  reg_inst_5_8_red : registrador
-  generic map (largura_dado = 5)
+  reg_RD2_red : registrador
+  generic map (largura_dado => data_width)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => aux_data_rd2,
+    saida_dados => aux_data_rd2_red
+  );
+
+  reg_inst_0_4_red : registrador
+  generic map (largura_dado => 5)
+  port map(
+    clk => clock,
+    reset => reset,
+    WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
+    entrada_dados => instrucao(0 to 4),
+    saida_dados => instruction_0_4_red
+  );  
+  
+  
+  reg_inst_5_8_red : registrador
+  generic map (largura_dado => fr_addr_width)
+  port map(
+    clk => clock,
+    reset => reset,
+    WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
+    entrada_dados => instrucao(5 to 8),
+    saida_dados => instruction_5_8_red
   );
 
   reg_inst_9_12_red : registrador
-  generic map (largura_dado = 5)
+  generic map (largura_dado => fr_addr_width)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => instrucao(9 to 12),
+    saida_dados => instruction_9_12_red
   );
 
   reg_inst_13_15_red : registrador
-  generic map (largura_dado = 5)
+  generic map (largura_dado => 3)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => instrucao(13 to 15), -- funct
+    saida_dados => instruction_13_15_red
   );
 
   reg_sig_ext_red : registrador
-  generic map (largura_dado = 5)
+  generic map (largura_dado => data_width)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => aux_signExt_out,
+    saida_dados => aux_signExt_out_red
   );
 
   reg_pc_plus_red : registrador
-  generic map (largura_dado = 5)
+  generic map (largura_dado => pc_width)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => aux_pc_plus,
+    saida_dados => aux_pc_plus_red
   );
 
   reg_controle_green : registrador
-  generic map (largura_dado = 5)
+  generic map (largura_dado => 5)
   port map(
     clk => clock,
     reset => reset,
@@ -608,62 +653,99 @@ architecture comportamento of via_de_dados_ciclo_unico is
   );
 
   reg_memd_green : registrador
-  generic map (largura_dado = 5)
+  generic map (largura_dado => data_width)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => aux_memd_out,
+    saida_dados => aux_memd_out_green
   );
 
   reg_alu_LO_green : registrador
-  generic map (largura_dado = 5)
+  generic map (largura_dado => data_width)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => aux_ula_out_LO,
+    saida_dados => aux_ula_out_LO_green
   );
 
   reg_alu_HI_green : registrador
-  generic map (largura_dado = 5)
+  generic map (largura_dado => data_width)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => aux_ula_out_HI,
+    saida_dados => aux_ula_out_HI_green
   );
 
   reg_inst_5_8_green : registrador
-  generic map (largura_dado = 5)
+  generic map (largura_dado => fr_addr_width)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => instruction_5_8_red,
+    saida_dados => instruction_5_8_green
   );
 
   reg_inst_9_12_green : registrador
-  generic map (largura_dado = 5)
+  generic map (largura_dado => fr_addr_width)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => instruction_9_12_red,
+    saida_dados => instruction_9_12_green
   );
 
   reg_pc_plus_green : registrador
-  generic map (largura_dado = 5)
+  generic map (largura_dado => pc_width)
   port map(
     clk => clock,
     reset => reset,
     WE => '1', --registrador vai estar sempre operando, para fazer stall tem que usar os sinais de controle
-    entrada_dados => ,
-    saida_dados => 
+    entrada_dados => aux_pc_plus_red,
+    saida_dados => aux_pc_plus_green
   );
+  --=================
+  --MUX DE FORWARDING
+  --=================
+
+  mux_for_A: mux41
+    generic map (largura_dado => data_width)
+    port map(dado_ent_0 => aux_data_rd1,
+             dado_ent_1 => aux_ula_out_HI,
+             dado_ent_2 => aux_ula_out_LO,
+             dado_ent_3 => aux_memd_out,
+             sele_ent   => aux_sel_mux_for_A,
+             dado_sai   => aux_out_mux_for_A
+
+            );
+
+  mux_for_B: mux41
+  generic map (largura_dado => data_width)
+  port map(dado_ent_0 => aux_data_rd2,
+            dado_ent_1 => aux_ula_out_HI,
+            dado_ent_2 => aux_ula_out_LO,
+            dado_ent_3 => aux_memd_out,
+            sele_ent   => aux_sel_mux_for_B,
+            dado_sai   => aux_out_mux_for_B
+
+          );
+--===============
+--FORWARDING UNIT
+--===============
+    for_unit: forwarding_unit
+    port map( instruction_0_4_red   =>  instruction_0_4_red,  
+              instruction_5_8       =>  instrucao(5 to 8),      
+              instruction_9_12      =>  instrucao(9 to 12),     
+              instruction_5_8_red   =>  instruction_5_8_red,  
+              instruction_9_12_red  =>  instruction_9_12_red, 
+              aux_sel_mux_for_A     =>  aux_sel_mux_for_A,      
+              aux_sel_mux_for_B     =>  aux_sel_mux_for_B    
+    );
 end architecture comportamento;

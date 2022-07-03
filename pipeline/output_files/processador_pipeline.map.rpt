@@ -1,5 +1,5 @@
 Analysis & Elaboration report for processador_pipeline
-Sat Jul 02 11:18:27 2022
+Sun Jul 03 16:56:47 2022
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -32,13 +32,47 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
  24. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|mux21:mux_pc2
  25. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|somador:instancia_somador_funct_rd1
  26. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|somador:instancia_somador_funct_rd2
- 27. Analysis & Elaboration Settings
- 28. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|somador:instancia_somador_funct_rd2"
- 29. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|somador:instancia_somador_funct_rd1"
- 30. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|somador:instancia_somador_plus2"
- 31. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|mux21:mux_in_wa1"
- 32. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico"
- 33. Analysis & Elaboration Messages
+ 27. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_controle_red
+ 28. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_RD1_red
+ 29. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_RD2_red
+ 30. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_0_4_red
+ 31. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_5_8_red
+ 32. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_9_12_red
+ 33. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_13_15_red
+ 34. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_sig_ext_red
+ 35. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_pc_plus_red
+ 36. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_controle_green
+ 37. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_memd_green
+ 38. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_alu_LO_green
+ 39. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_alu_HI_green
+ 40. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_5_8_green
+ 41. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_9_12_green
+ 42. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_pc_plus_green
+ 43. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|mux41:mux_for_A
+ 44. Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|mux41:mux_for_B
+ 45. Analysis & Elaboration Settings
+ 46. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_pc_plus_green"
+ 47. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_9_12_green"
+ 48. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_5_8_green"
+ 49. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_alu_HI_green"
+ 50. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_alu_LO_green"
+ 51. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_memd_green"
+ 52. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_controle_green"
+ 53. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_pc_plus_red"
+ 54. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_sig_ext_red"
+ 55. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_13_15_red"
+ 56. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_9_12_red"
+ 57. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_5_8_red"
+ 58. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_0_4_red"
+ 59. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_RD2_red"
+ 60. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_RD1_red"
+ 61. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_controle_red"
+ 62. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|somador:instancia_somador_funct_rd2"
+ 63. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|somador:instancia_somador_funct_rd1"
+ 64. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|somador:instancia_somador_plus2"
+ 65. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|mux21:mux_in_wa1"
+ 66. Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico"
+ 67. Analysis & Elaboration Messages
 
 
 
@@ -65,7 +99,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Sat Jul 02 11:18:27 2022       ;
+; Analysis & Elaboration Status      ; Successful - Sun Jul 03 16:56:46 2022       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; processador_pipeline                        ;
 ; Top-level Entity Name              ; processador_ciclo_unico                     ;
@@ -341,6 +375,186 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_controle_red ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 14    ; Signed Integer                                                                                               ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_RD1_red ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 16    ; Signed Integer                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_RD2_red ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 16    ; Signed Integer                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_0_4_red ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 5     ; Signed Integer                                                                                               ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_5_8_red ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 4     ; Signed Integer                                                                                               ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_9_12_red ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 4     ; Signed Integer                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_13_15_red ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                           ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 3     ; Signed Integer                                                                                                 ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_sig_ext_red ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                        ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 16    ; Signed Integer                                                                                              ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_pc_plus_red ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                        ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 16    ; Signed Integer                                                                                              ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_controle_green ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                           ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 5     ; Signed Integer                                                                                                 ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_memd_green ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                       ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 16    ; Signed Integer                                                                                             ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_alu_LO_green ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 16    ; Signed Integer                                                                                               ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_alu_HI_green ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 16    ; Signed Integer                                                                                               ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_5_8_green ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                           ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 4     ; Signed Integer                                                                                                 ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_9_12_green ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                            ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 4     ; Signed Integer                                                                                                  ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_pc_plus_green ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+; largura_dado   ; 16    ; Signed Integer                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|mux41:mux_for_A ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; largura_dado   ; 16    ; Signed Integer                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|mux41:mux_for_B ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; largura_dado   ; 16    ; Signed Integer                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Settings                                                                                             ;
 +----------------------------------------------------------------------------+-------------------------+----------------------+
@@ -428,6 +642,150 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------------------------------------------------------------+-------------------------+----------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_pc_plus_green" ;
++------+-------+----------+---------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                                ;
++------+-------+----------+---------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_9_12_green" ;
++------+-------+----------+-----------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                       ;
++------+-------+----------+-----------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                                  ;
++------+-------+----------+-----------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_5_8_green" ;
++------+-------+----------+----------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_alu_HI_green" ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                               ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_alu_LO_green" ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                               ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_memd_green" ;
++------+-------+----------+------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                  ;
++------+-------+----------+------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                             ;
++------+-------+----------+------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_controle_green" ;
++------+-------+----------+----------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_pc_plus_red" ;
++------+-------+----------+-------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                              ;
++------+-------+----------+-------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_sig_ext_red" ;
++------+-------+----------+-------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                              ;
++------+-------+----------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_13_15_red" ;
++------+-------+----------+----------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_9_12_red" ;
++------+-------+----------+---------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                     ;
++------+-------+----------+---------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                                ;
++------+-------+----------+---------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_5_8_red" ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                               ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_0_4_red" ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                               ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_RD2_red" ;
++------+-------+----------+---------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                               ;
++------+-------+----------+---------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                          ;
++------+-------+----------+---------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_RD1_red" ;
++------+-------+----------+---------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                               ;
++------+-------+----------+---------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                          ;
++------+-------+----------+---------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_controle_red" ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+; we   ; Input ; Info     ; Stuck at VCC                                                                               ;
++------+-------+----------+--------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|somador:instancia_somador_funct_rd2" ;
 +------------------+-------+----------+---------------------------------------------------------------------------------------+
@@ -485,15 +843,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Sat Jul 02 11:17:45 2022
+    Info: Processing started: Sun Jul 03 16:55:56 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador_pipeline -c processador_pipeline --analysis_and_elaboration
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file banco_registradores_mod.vhd
     Info (12022): Found design unit 1: banco_registradores_mod-comportamental File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd Line: 33
     Info (12023): Found entity 1: banco_registradores_mod File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd Line: 14
 Info (12021): Found 2 design units, including 1 entities, in source file via_de_dados_ciclo_unico.vhd
-    Info (12022): Found design unit 1: via_de_dados_ciclo_unico-comportamento File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 32
-    Info (12023): Found entity 1: via_de_dados_ciclo_unico File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 11
+    Info (12022): Found design unit 1: via_de_dados_ciclo_unico-comportamento File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 31
+    Info (12023): Found entity 1: via_de_dados_ciclo_unico File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file unidade_de_controle_ciclo_unico.vhd
     Info (12022): Found design unit 1: unidade_de_controle_ciclo_unico-beh File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/unidade_de_controle_ciclo_unico.vhd Line: 25
     Info (12023): Found entity 1: unidade_de_controle_ciclo_unico File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/unidade_de_controle_ciclo_unico.vhd Line: 12
@@ -552,32 +910,40 @@ Info (12021): Found 2 design units, including 1 entities, in source file barrel_
 Info (12021): Found 2 design units, including 1 entities, in source file banco_registradores.vhd
     Info (12022): Found design unit 1: banco_registradores-comportamental File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores.vhd Line: 29
     Info (12023): Found entity 1: banco_registradores File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file forwarding_unit.vhd
+    Info (12022): Found design unit 1: forwarding_unit-comportamental File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/forwarding_unit.vhd Line: 17
+    Info (12023): Found entity 1: forwarding_unit File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/forwarding_unit.vhd Line: 6
 Info (12127): Elaborating entity "processador_ciclo_unico" for the top level hierarchy
 Info (12128): Elaborating entity "digi_clk" for hierarchy "digi_clk:clock_divider" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd Line: 119
 Info (12128): Elaborating entity "memi" for hierarchy "memi:instancia_memi" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd Line: 125
 Warning (10492): VHDL Process Statement warning at memi.vhd(60): signal "rom" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memi.vhd Line: 60
 Info (12128): Elaborating entity "unidade_de_controle_ciclo_unico" for hierarchy "unidade_de_controle_ciclo_unico:instancia_unidade_de_controle_ciclo_unico" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd Line: 134
 Info (12128): Elaborating entity "via_de_dados_ciclo_unico" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd Line: 140
-Warning (10036): Verilog HDL or VHDL warning at via_de_dados_ciclo_unico.vhd(160): object "aux_funct" assigned a value but never read File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 160
-Warning (10036): Verilog HDL or VHDL warning at via_de_dados_ciclo_unico.vhd(202): object "foo" assigned a value but never read File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 202
-Info (12128): Elaborating entity "ula_mod" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|ula_mod:instancia_ula1" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 254
-Info (12128): Elaborating entity "banco_registradores_mod" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|banco_registradores_mod:instancia_banco_registradores" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 264
+Warning (10036): Verilog HDL or VHDL warning at via_de_dados_ciclo_unico.vhd(294): object "foo" assigned a value but never read File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 294
+Info (12128): Elaborating entity "ula_mod" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|ula_mod:instancia_ula1" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 390
+Info (12128): Elaborating entity "banco_registradores_mod" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|banco_registradores_mod:instancia_banco_registradores" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 400
 Warning (10492): VHDL Process Statement warning at banco_registradores_mod.vhd(41): signal "banco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd Line: 41
 Warning (10492): VHDL Process Statement warning at banco_registradores_mod.vhd(41): signal "ent_Rd1_ende" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd Line: 41
 Warning (10492): VHDL Process Statement warning at banco_registradores_mod.vhd(42): signal "banco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd Line: 42
 Warning (10492): VHDL Process Statement warning at banco_registradores_mod.vhd(42): signal "ent_Rd2_ende" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd Line: 42
-Info (12128): Elaborating entity "memd" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|memd:data_mem" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 279
-Info (12128): Elaborating entity "mux21" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|mux21:mux_rgbk_out_A" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 288
-Info (12128): Elaborating entity "registrador" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_A" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 329
-Info (12128): Elaborating entity "pc" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|pc:instancia_pc" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 347
-Info (12128): Elaborating entity "extensor" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|extensor:extensor1" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 356
-Info (12128): Elaborating entity "somador" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|somador:instancia_somador_plus2" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 362
-Info (12128): Elaborating entity "barrel_shift_x2" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|barrel_shift_x2:instancia_barrel_shift" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 369
+Info (12128): Elaborating entity "memd" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|memd:data_mem" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 415
+Info (12128): Elaborating entity "mux21" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|mux21:mux_rgbk_out_A" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 424
+Info (12128): Elaborating entity "registrador" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_A" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 465
+Info (12128): Elaborating entity "pc" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|pc:instancia_pc" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 483
+Info (12128): Elaborating entity "extensor" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|extensor:extensor1" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 492
+Info (12128): Elaborating entity "somador" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|somador:instancia_somador_plus2" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 498
+Info (12128): Elaborating entity "barrel_shift_x2" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|barrel_shift_x2:instancia_barrel_shift" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 505
+Info (12128): Elaborating entity "registrador" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_controle_red" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 554
+Info (12128): Elaborating entity "registrador" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_0_4_red" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 584
+Info (12128): Elaborating entity "registrador" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_5_8_red" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 595
+Info (12128): Elaborating entity "registrador" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|registrador:reg_inst_13_15_red" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 615
+Info (12128): Elaborating entity "mux41" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|mux41:mux_for_A" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 718
+Info (12128): Elaborating entity "forwarding_unit" for hierarchy "via_de_dados_ciclo_unico:instancia_via_de_dados_ciclo_unico|forwarding_unit:for_unit" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd Line: 742
 Info (12128): Elaborating entity "to_7seg" for hierarchy "to_7seg:seg0" File: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd Line: 153
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 829 megabytes
-    Info: Processing ended: Sat Jul 02 11:18:27 2022
-    Info: Elapsed time: 00:00:42
-    Info: Total CPU time (on all processors): 00:01:42
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 833 megabytes
+    Info: Processing ended: Sun Jul 03 16:56:48 2022
+    Info: Elapsed time: 00:00:52
+    Info: Total CPU time (on all processors): 00:01:46
 
 
