@@ -31,7 +31,7 @@ architecture comportamental of memi is
 				0      => X"4064", -- LI1 100
 				1      => X"4FA3", -- LI2 -93
 				2      => X"0980", -- ADD r3
-				3      => X"5180",  -- LOP1 r3
+				3      => X"5180"  -- LOP1 r3
 				--0 => X"4008", -- fatorial
 				--1 => X"5800",
 				--2 => X"0C80",
