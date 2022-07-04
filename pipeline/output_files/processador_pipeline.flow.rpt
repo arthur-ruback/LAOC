@@ -1,5 +1,5 @@
 Flow report for processador_pipeline
-Sat Jul 02 11:18:27 2022
+Sun Jul 03 17:44:00 2022
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Jul 02 11:18:27 2022       ;
+; Flow Status                        ; Successful - Sun Jul 03 17:44:00 2022       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; processador_pipeline                        ;
 ; Top-level Entity Name              ; processador_ciclo_unico                     ;
@@ -67,7 +67,7 @@ agreement for further details.
 +-------------------+----------------------+
 ; Option            ; Setting              ;
 +-------------------+----------------------+
-; Start date & time ; 07/02/2022 11:17:46  ;
+; Start date & time ; 07/03/2022 17:43:14  ;
 ; Main task         ; Compilation          ;
 ; Revision Name     ; processador_pipeline ;
 +-------------------+----------------------+
@@ -78,7 +78,7 @@ agreement for further details.
 +--------------------------------------+---------------------------------------+----------------------+-------------------------+----------------------------+
 ; Assignment Name                      ; Value                                 ; Default Value        ; Entity Name             ; Section Id                 ;
 +--------------------------------------+---------------------------------------+----------------------+-------------------------+----------------------------+
-; COMPILER_SIGNATURE_ID                ; 31222756938633.165677146604280        ; --                   ; --                      ; --                         ;
+; COMPILER_SIGNATURE_ID                ; 31222756938633.165688099409140        ; --                   ; --                      ; --                         ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --                   ; --                      ; tb_processador_ciclo_unico ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_processador_ciclo_unico            ; --                   ; --                      ; eda_simulation             ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                  ; --                   ; --                      ; eda_simulation             ;
@@ -105,8 +105,8 @@ agreement for further details.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:42     ; 1.0                     ; 829 MB              ; 00:01:41                           ;
-; Total                  ; 00:00:42     ; --                      ; --                  ; 00:01:41                           ;
+; Analysis & Elaboration ; 00:00:46     ; 1.0                     ; 835 MB              ; 00:01:49                           ;
+; Total                  ; 00:00:46     ; --                      ; --                  ; 00:01:49                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
