@@ -1,0 +1,25 @@
+O periférico GPIO terá a seguinte interface:
+
+Instrução 	: in
+Dados 		: in
+Interrupt flags	: out
+Data in		: out
+Pino		: inout
+reset e clock
+
+O GPIO executará uma instrução por ciclo de clock, basta colocar a instrução na entrada. Os dados que estiverem na entrada serão tratados de acordo.
+
+O GPIO tem como entrada o registrador carregado durante o syscall.
+-8 bits mais significativos de instrução
+-8 bits menos significativos de dados
+
+As instruções são mapeadas da seguinte maneira:
+0 - "NOP"
+1 - "Data Read" Carrega os dados lidos no registrador interno
+2 - "Data Write" Carrega o registrador de saida
+3 - "Interrupt Enable Configure" '1' para habilitado e '0' para desabilitado
+4 - "Direction Enable Configure" seleciona a direção dos pinos
+Instrução externa -> "Load Data" Carrega o dado lido no banco de registradores
+
+A arquitetura será a seguinte:
+Haverá um bloco com o GPIO propriamente dito e outro para decodificar as instruções.
