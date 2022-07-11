@@ -106,7 +106,7 @@ interrupt_flag_generation: for i in 0 to 7 generate
 end generate interrupt_flag_generation;
 
 buffer_tri_state: for i in 0 to 7 generate -- buffer tri-state
-        Pins(i) <= pre_buffer(i) when Direction_Conf(i) = '0' else
+        Pins(i) <= pre_buffer(i) when Direction_Conf(i) = '1' else
                    'Z';
 end generate buffer_tri_state;
 
