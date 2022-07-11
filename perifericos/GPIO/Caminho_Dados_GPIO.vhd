@@ -39,6 +39,10 @@ architecture dataflow of Caminho_Dados_GPIO is
     --======
     signal Direction_Conf, Interrupt_Conf :std_logic_vector(0 to 7); --sinal que vai direto nos buffers tri-state
     signal pre_buffer :std_logic_vector(0 to 7); --sinal que sai do reg de saida e vai para o buffer tri-state
+    
+    -- registrador de deslocamento de 2 bits para detectar bordas do sinal de entrada
+    type type_reg_edge_detect is array (0 to 7) of std_logic_vector(0 to 1);
+    signal reg_edge_detect : type_reg_edge_detect;
 
 begin
 --=============
@@ -84,20 +88,22 @@ begin
 --===========
 --ATRIBUICOES
 --===========
-edge_detection: process (Pins, clk)
+reg_edge_detection_load: process (Pins, clk)
 begin
-    
+    -- carrega sinal de entrada
     for i in 0 to 7 loop
-        if (rising_edge(Pins(i)) or falling_edge(Pins(i)) ) then -- so habilita a interrupção se estiver configurado
-            if (Interrupt_Conf(i) = '1') then
-					Interrupt_flag(i) <= '1';
-				end if;
-        elsif (rising_edge(clk)) then -- apaga no próximo pulso de clock
-            Interrupt_flag(i) <= '0';
+        if (rising_edge(clk)) then
+            reg_edge_detect(i) <= reg_edge_detect(i)(1) & Pins(i); -- desloca e carrega no menos significativo 
         end if;
     end loop;
 
-end process edge_detection;
+end process reg_edge_detection_load;
+
+interrupt_flag_generation: for i in 0 to 7 generate
+            Interrupt_flag(i) <=    '1' when reg_edge_detect(i) = "01" and Interrupt_Conf(i) = '1' else -- borda de subida
+                                    '1' when reg_edge_detect(i) = "10" and Interrupt_Conf(i) = '1' else -- borda de descida
+                                    '0';
+end generate interrupt_flag_generation;
 
 buffer_tri_state: for i in 0 to 7 generate -- buffer tri-state
         Pins(i) <= pre_buffer(i) when Direction_Conf(i) = '0' else

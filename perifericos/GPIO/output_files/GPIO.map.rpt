@@ -1,5 +1,5 @@
 Analysis & Elaboration report for GPIO
-Sun Jul 10 17:09:13 2022
+Sun Jul 10 21:53:33 2022
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -9,8 +9,12 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: registrador:INT
+  5. Parameter Settings for User Entity Instance: registrador:DIR
+  6. Parameter Settings for User Entity Instance: registrador:DATAIN
+  7. Parameter Settings for User Entity Instance: registrador:DATAOUT
+  8. Analysis & Elaboration Settings
+  9. Analysis & Elaboration Messages
 
 
 
@@ -37,7 +41,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Failed - Sun Jul 10 17:09:13 2022           ;
+; Analysis & Elaboration Status      ; Successful - Sun Jul 10 21:53:33 2022       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; GPIO                                        ;
 ; Top-level Entity Name              ; Caminho_Dados_GPIO                          ;
@@ -65,6 +69,46 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registrador:INT ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; largura_dado   ; 8     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registrador:DIR ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; largura_dado   ; 8     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registrador:DATAIN ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; largura_dado   ; 8     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registrador:DATAOUT ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; largura_dado   ; 8     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -160,7 +204,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Sun Jul 10 17:08:29 2022
+    Info: Processing started: Sun Jul 10 21:52:49 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off GPIO -c GPIO --analysis_and_elaboration
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file registrador.vhd
@@ -176,13 +220,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file tb_cami
     Info (12022): Found design unit 1: tb_Caminho_Dados_GPIO-teste File: C:/Users/Gabriel/Documents/GitHub/LAOC/perifericos/GPIO/tb_Caminho_Dados_GPIO.vhd Line: 8
     Info (12023): Found entity 1: tb_Caminho_Dados_GPIO File: C:/Users/Gabriel/Documents/GitHub/LAOC/perifericos/GPIO/tb_Caminho_Dados_GPIO.vhd Line: 5
 Info (12127): Elaborating entity "Caminho_Dados_GPIO" for the top level hierarchy
-Error (10628): VHDL error at Caminho_Dados_GPIO.vhd(91): can't implement register for two clock edges combined with a binary operator File: C:/Users/Gabriel/Documents/GitHub/LAOC/perifericos/GPIO/Caminho_Dados_GPIO.vhd Line: 91
-Error (10658): VHDL Operator error at Caminho_Dados_GPIO.vhd(91): failed to evaluate call to operator ""or"" File: C:/Users/Gabriel/Documents/GitHub/LAOC/perifericos/GPIO/Caminho_Dados_GPIO.vhd Line: 91
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 828 megabytes
-    Error: Processing ended: Sun Jul 10 17:09:13 2022
-    Error: Elapsed time: 00:00:44
-    Error: Total CPU time (on all processors): 00:01:46
+Info (12128): Elaborating entity "registrador" for hierarchy "registrador:INT" File: C:/Users/Gabriel/Documents/GitHub/LAOC/perifericos/GPIO/Caminho_Dados_GPIO.vhd Line: 52
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 824 megabytes
+    Info: Processing ended: Sun Jul 10 21:53:33 2022
+    Info: Elapsed time: 00:00:44
+    Info: Total CPU time (on all processors): 00:01:50
 
 
