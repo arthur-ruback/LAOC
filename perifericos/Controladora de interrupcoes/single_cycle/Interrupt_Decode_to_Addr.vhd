@@ -14,7 +14,8 @@ architecture combinacional of Interrupt_Decode_to_Addr is
     
 begin 
      -- só vai ter uma rotina de interrupção por enquanto, a do GPIO
-    ISR_addr <= "1000000000000000" when current = "1000000000000000" else
+    ISR_addr <= x"0028" when current = "1000000000000000" else -- overflow pula para a instrução 20 << 1
+                x"0040" when current = "0100000000000000" else -- GPIO pula para a instrução 32 << 1
                 (others => '0');
     
     

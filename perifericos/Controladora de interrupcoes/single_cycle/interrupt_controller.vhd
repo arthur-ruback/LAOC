@@ -94,8 +94,8 @@ begin
   --============
   -- ATRIBUIÇÕES
   -- ===========	
-  -- Disable interrupts except 0
-  int_mask 	<= (1 to 15 => '0', others => '1');
+  -- Disable interrupts except 0 (overflow) and 1 (GPIO)
+  int_mask 	<= (2 to 15 => '0', others => '1');
   ISR_addr 	<= sig_ISR_addr;
   cause 	<= sig_ISR_addr;
   

@@ -28,9 +28,24 @@ architecture comportamental of memi is
 		variable tmp : memory_t := (others => (others => '0'));
 	begin 
 		tmp := (					-- exemplo de uma instrução qualquer de 16 bits (4 símbos em hexadecimal)
-				0      => X"4064", -- LI1 100
-				1      => X"4FA3", -- LI2 -93
-				2      => X"0980", -- ADD r3
+				0     	=> X"43FF", -- LI1 1023
+				1      	=> X"4820", -- LI2 32
+				2      	=> X"7080", -- MUL $1
+				3		=> X"6088", -- LOP12 $1 $1
+				4		=> X"0900", -- ADD $2, deveria dar overflow
+				5     	=> X"43FF", -- LI1 1023
+				6      	=> X"4820", -- LI2 32
+				7      	=> X"7080", -- MUL $1
+				8		=> X"6088", -- LOP12 $1 $1
+				9		=> X"0900", -- ADD $2, deveria dar overflow
+				
+				-- rotina de interrupção Overflow
+				20		=> X"4821", -- LI2 33
+				21		=> X"0001", -- SYSCALL para limpar a flag de interrupção
+				22		=> X"0004",	-- SYSCALL para dizer que acabou a rotina
+				23		=> X"7800",  -- NOP porque a controladora leva um ciclo de clock para retornar
+
+
 				-- codigo do fatorial
 				-- 0 => X"4008",
 				-- 1 => X"5800",

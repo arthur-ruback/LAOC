@@ -75,13 +75,14 @@ begin
     end if;
   end process proc_flag_zero;
 
-  proc_overflow : process (seletor, entrada_a, entrada_b, resultado_ula)  
+  proc_overflow : process (seletor, entrada_a, entrada_b, resultado_ula)
+	begin
     if (seletor = "0000") then --caso seja soma
       -- se ambas as entradas forem positivas e o resultado for negativo
-      if(resultado_ula(15) = '1' and entrada_a(15) = '0' and entrada_b(15) = '0') then
+      if(resultado_ula(16) = '1' and entrada_a(0) = '0' and entrada_b(0) = '0') then
         overflow <= '1'; 
       -- se ambas as entradas forem negativas e o resultado for positivo
-      elsif (resultado_ula(15) = '0' and entrada_a(15) = '1' and entrada_b(15) = '1') then
+      elsif (resultado_ula(16) = '0' and entrada_a(0) = '1' and entrada_b(0) = '1') then
         overflow <= '1';
       else
         overflow <= '0';
