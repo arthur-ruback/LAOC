@@ -1,0 +1,13 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity tb_interrupt_controller is
+end tb_interrupt_controller;
+
+architecture rtl of tb_interrupt_controller is
+begin
+    
+    
+    
+end architecture rtl;

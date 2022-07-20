@@ -51,14 +51,14 @@ architecture teste of tb_Caminho_Dados_GPIO is
     tb_clk <= not tb_clk after 10 ns;
     tb_reset <= '1', '0' after 40 ns;
 
-    tb_Data <= "11111111";
+    tb_Data <= "11111111"; -- habilita as interrupçoes
     
 	  
-	 tb_Pins <= "11110000", "00001111" after 100 ns, (others => 'Z') after 150 ns; 
+	 tb_Pins <= "11111111", "01111111" after 200 ns; 
 
-    tb_Rd_EN <= '0', '1' after 200 ns; -- Le os dados e depois escreve
-    tb_Wr_EN <= '0', '1' after 200 ns;
-    tb_Interrupt_Conf_EN <= '0';
-    tb_Direction_Conf_EN <= '0', '1' after 150 ns;
+    tb_Rd_EN <= '0'; -- nunca le nem nunca escreve
+    tb_Wr_EN <= '0';
+    tb_Interrupt_Conf_EN <= '1', '0' after 100 ns;
+    tb_Direction_Conf_EN <= '0'; -- sempre entrada
 
 end teste;

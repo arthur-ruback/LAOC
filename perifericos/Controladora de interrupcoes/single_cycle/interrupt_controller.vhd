@@ -4,17 +4,18 @@ use ieee.std_logic_1164.all;
 entity interrupt_controller is
 	port(
 		Clock : in std_logic;
-      Reset : in std_logic;
+      	Reset : in std_logic;
 		
 		--input
-		instruction : in std_logic_vector(0 to 15);
-		Int_request_bus : in std_logic_vector;  --# Controls used to activate new interrupts
+		instruction 	: in std_logic_vector(0 to 15);
+		Int_request_bus : in std_logic_vector(0 to 15);  --# Controls used to activate new interrupts
+														-- only one interrupt, for now
 		
 		--output
 		EPC_en		: out std_logic;
 		mx_epc		: out std_logic_vector(0 to 1);
-		ISR_addr		: out std_logic_vector(0 to 15);
-		cause			: out std_logic_vector(0 to 15)
+		ISR_addr	: out std_logic_vector(0 to 15);
+		cause		: out std_logic_vector(0 to 15)
 	);
 end entity;
 
