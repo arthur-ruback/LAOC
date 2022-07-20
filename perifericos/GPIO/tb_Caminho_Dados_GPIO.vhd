@@ -16,14 +16,14 @@ architecture teste of tb_Caminho_Dados_GPIO is
 					Direction_Conf_EN	: in std_logic;
 					-- sinais de dados
 					Data                : in std_logic_vector(0 to 7); -- dados que podem ser config ou saida
-					Data_in             : out std_logic_vector(0 to 7); -- dados recebidos pelos pinos
+					Data_read           : out std_logic_vector(0 to 7); -- dados recebidos pelos pinos
 					Interrupt_flag      : out std_logic_vector(0 to 7);
 					Pins                : inout std_logic_vector(0 to 7)
 			  );
     end component;
 
     signal tb_reset, tb_clk, tb_Rd_EN, tb_Wr_EN, tb_Interrupt_Conf_EN, tb_Direction_Conf_EN	: std_logic := '0';
-    signal tb_Data, tb_Data_in, tb_Interrupt_flag, tb_Pins : std_logic_vector(0 to 7);    
+    signal tb_Data, tb_Data_read, tb_Interrupt_flag, tb_Pins : std_logic_vector(0 to 7);    
 
     begin
     --============    
@@ -39,7 +39,7 @@ architecture teste of tb_Caminho_Dados_GPIO is
                 Direction_Conf_EN   => tb_Direction_Conf_EN,	
                 -- sinais de dados
                 Data                => tb_Data,                
-                Data_in             => tb_Data_in,             
+                Data_read           => tb_Data_read,             
                 Interrupt_flag      => tb_Interrupt_flag,      
                 Pins                => tb_Pins                
         );

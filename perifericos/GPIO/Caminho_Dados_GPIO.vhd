@@ -12,7 +12,7 @@ entity Caminho_Dados_GPIO is
             Direction_Conf_EN	: in std_logic;
             -- sinais de dados
             Data                : in std_logic_vector(0 to 7); -- dados que podem ser config ou saida
-            Data_in             : out std_logic_vector(0 to 7); -- dados recebidos pelos pinos
+            Data_read             : out std_logic_vector(0 to 7); -- dados recebidos pelos pinos
             Interrupt_flag      : out std_logic_vector(0 to 7);
             Pins                : inout std_logic_vector(0 to 7)
 
@@ -73,7 +73,7 @@ begin
                 WE              => Rd_EN,
                 clk             => clk,
                 reset           => reset,
-                saida_dados     => Data_in
+                saida_dados     => Data_read
     );
 
     DATAOUT: registrador --entrega dados para fora
