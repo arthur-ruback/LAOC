@@ -28,8 +28,7 @@ architecture comportamental of ula_mod is
   signal resultado_ula : std_logic_vector(0 to (2 * largura_dado - 1));
   signal aux : std_logic_vector(0 to (largura_dado - 1));
 begin
---TODO FIX
-	overflow <= '0';
+
 	
   alu_op: process (entrada_a, entrada_b, seletor, aux) is
   begin
@@ -75,7 +74,23 @@ begin
       flag_zero <= '0';
     end if;
   end process proc_flag_zero;
-  
+
+  proc_overflow : process (seletor, entrada_a, entrada_b, resultado_ula)  
+    if (seletor = "0000") then --caso seja soma
+      -- se ambas as entradas forem positivas e o resultado for negativo
+      if(resultado_ula(15) = '1' and entrada_a(15) = '0' and entrada_b(15) = '0') then
+        overflow <= '1'; 
+      -- se ambas as entradas forem negativas e o resultado for positivo
+      elsif (resultado_ula(15) = '0' and entrada_a(15) = '1' and entrada_b(15) = '1') then
+        overflow <= '1';
+      else
+        overflow <= '0';
+      end if;
+    else  
+      overflow <= '0';
+    end if;
+  end process proc_overflow;
+
   saida_hi <= resultado_ula(0 to largura_dado-1);
   saida_lo <= resultado_ula(largura_dado to (2 * largura_dado - 1));
 end comportamental;

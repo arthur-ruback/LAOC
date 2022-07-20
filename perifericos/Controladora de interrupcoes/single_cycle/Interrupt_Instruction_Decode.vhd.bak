@@ -1,0 +1,51 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity Interrupt_Instruction_Decode is
+    port (
+        instruction : in std_logic_vector(0 to 15);
+        interrupt_ack : out std_logic;
+        clear_pending : out std_logic;
+        dis_alert     : out std_logic;
+        en_alert      : out std_logic;
+
+    );
+end entity Interrupt_Instruction_Decode;
+
+
+architecture comb of Interrupt_Instruction_Decode is
+    
+begin
+    instructions: process (instruction) is
+    begin
+          -- Assumes all outputs false and if a case occurs, the last
+          -- value atributed to a signal in a process is really atributed
+          interrupt_ack <= '0';
+          clear_pending <= '0';
+          dis_alert     <= '0';
+          en_alert      <= '0';
+          case(instruction) is
+          --clear current interrupt
+              when "0000000000000001" =>
+                  interrupt_ack <= '1';
+          --clear all interrupts
+              when "0000000000000010" =>
+                  clear_pending <= '1';
+          --disable interrupt alert
+              when "0000000000000011" =>
+                  dis_alert <= '1';
+          --enable interrupt alert (and if there are no other interrupts, return to the flow of the program)
+              when "0000000000000100" =>
+                  en_alert <= '1';
+          --Other instructions
+              when others =>
+                  interrupt_ack <= '0';
+                  clear_pending <= '0';
+                  dis_alert     <= '0';
+                  en_alert      <= '0';
+          end case;
+    end process;
+    
+    
+end architecture comb;

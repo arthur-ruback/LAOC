@@ -23,11 +23,7 @@ entity processador_ciclo_unico is
     --		Chave_enter				: in std_logic;
     Leds_vermelhos_saida : out std_logic_vector(0 to DATA_WIDTH - 1);
     Chave_reset : in std_logic;
-    Clock_in : in std_logic;
-	 disp0 : out std_logic_vector(0 to 6);
-	 disp1 : out std_logic_vector(0 to 6);
-	 disp2 : out std_logic_vector(0 to 6);
-	 disp3 : out std_logic_vector(0 to 6)
+    Clock_in : in std_logic
   );
 end processador_ciclo_unico;
 

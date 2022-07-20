@@ -138,12 +138,12 @@ architecture comportamento of via_de_dados_ciclo_unico is
 	);
 	end component;
 	
-	component issp is
-		port (
-			source : out std_logic_vector(15 downto 0);                    -- source
-			probe  : in  std_logic_vector(15 downto 0) := (others => 'X')  -- probe
-		);
-	end component issp;
+	-- component issp is
+	-- 	port (
+	-- 		source : out std_logic_vector(15 downto 0);                    -- source
+	-- 		probe  : in  std_logic_vector(15 downto 0) := (others => 'X')  -- probe
+	-- 	);
+	-- end component issp;
 	
 	component interrupt_controller is
     port(
@@ -156,7 +156,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
 		
 		--output
 		EPC_en		: out std_logic;
-		mx_epc		: out std_logic_vector(0 to 1);
+		MEPC			: out std_logic_vector(0 to 1);
 		ISR_addr		: out std_logic_vector(0 to 15);
 		cause			: out std_logic_vector(0 to 15)
 	);
@@ -240,7 +240,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
 
   begin
   -- sinal criado para compilar no modelsim
-  aux_entrada_b <=(("0000000000000") & instrucao(13 to 15));
+  aux_entrada_b <=(("0000000000000") & aux_funct);
   
   
   -- A partir deste comentário faça associações necessárias das entradas declaradas na entidade da sua via_dados_ciclo_unico com
@@ -285,11 +285,11 @@ architecture comportamento of via_de_dados_ciclo_unico is
   -- ou ainda uma das saídas da entidade via_de_dados_ciclo_unico.
   -- Veja os exemplos de instanciação a seguir:
 
-  	u0 : component issp
-		port map (
-			-- sources.source
-			probe  => aux_novo_pc   --  probes.probe
-		);
+  	-- u0 : component issp
+		-- port map (
+		-- 	-- sources.source
+		-- 	probe  => aux_novo_pc   --  probes.probe
+		-- );
 
   
   aux_data_wd2 <= aux_ula_out_HI;
@@ -301,7 +301,8 @@ architecture comportamento of via_de_dados_ciclo_unico is
     seletor => aux_ula_ctrl,
     saida_hi => aux_ula_out_HI,
     saida_lo => aux_ula_out_LO,
-    flag_zero => aux_flag_zero
+    flag_zero => aux_flag_zero,
+	 overflow => aux_overflow
   );
 
   instancia_banco_registradores : banco_registradores_mod
@@ -464,8 +465,8 @@ architecture comportamento of via_de_dados_ciclo_unico is
 		-- TODO CHANGE
 		Int_request_bus(0) => aux_overflow,
 		Int_request_bus(1 to 15) => "000000000000000",
-		EPC_en => aux_EPC_en,
-		mx_epc => aux_EPC_mx,
+		EPC_EN => aux_EPC_en,
+		MEPC => aux_EPC_mx,
 		ISR_addr	=> aux_ISR_addr,
 		cause	=> aux_cause_in
   );
@@ -481,7 +482,7 @@ architecture comportamento of via_de_dados_ciclo_unico is
   
   mx_EPC : mux41
   port map(
-    dado_ent_0 => aux_pc_plus,
+    dado_ent_0 => aux_novo_pc,
     dado_ent_1 => aux_EPC_out,
 	 dado_ent_2 => aux_ISR_addr,
     dado_ent_3 => aux_ISR_addr,
