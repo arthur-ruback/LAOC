@@ -13,7 +13,7 @@
 # 
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:12 on Jul 03,2022
+# Start time: 12:59:25 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/banco_registradores_mod.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -21,11 +21,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity banco_registradores_mod
 # -- Compiling architecture comportamental of banco_registradores_mod
-# End time: 17:45:13 on Jul 03,2022, Elapsed time: 0:00:01
+# End time: 12:59:25 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:13 on Jul 03,2022
+# Start time: 12:59:25 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/via_de_dados_ciclo_unico.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -33,11 +33,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity via_de_dados_ciclo_unico
 # -- Compiling architecture comportamento of via_de_dados_ciclo_unico
-# End time: 17:45:13 on Jul 03,2022, Elapsed time: 0:00:00
+# End time: 12:59:26 on Jul 21,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/unidade_de_controle_ciclo_unico.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:13 on Jul 03,2022
+# Start time: 12:59:26 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/unidade_de_controle_ciclo_unico.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -45,11 +45,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity unidade_de_controle_ciclo_unico
 # -- Compiling architecture beh of unidade_de_controle_ciclo_unico
-# End time: 17:45:14 on Jul 03,2022, Elapsed time: 0:00:01
+# End time: 12:59:26 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/ula_mod.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:14 on Jul 03,2022
+# Start time: 12:59:26 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/ula_mod.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -57,22 +57,22 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ula_mod
 # -- Compiling architecture comportamental of ula_mod
-# End time: 17:45:14 on Jul 03,2022, Elapsed time: 0:00:00
+# End time: 12:59:26 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/to_7seg.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:14 on Jul 03,2022
+# Start time: 12:59:26 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/to_7seg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity to_7seg
 # -- Compiling architecture Behavioral of to_7seg
-# End time: 17:45:15 on Jul 03,2022, Elapsed time: 0:00:01
+# End time: 12:59:26 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/somador.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:15 on Jul 03,2022
+# Start time: 12:59:26 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/somador.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -80,66 +80,66 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity somador
 # -- Compiling architecture dataflow of somador
-# End time: 17:45:15 on Jul 03,2022, Elapsed time: 0:00:00
+# End time: 12:59:26 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/registrador.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:15 on Jul 03,2022
+# Start time: 12:59:26 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/registrador.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity registrador
 # -- Compiling architecture comportamental of registrador
-# End time: 17:45:16 on Jul 03,2022, Elapsed time: 0:00:01
+# End time: 12:59:26 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:16 on Jul 03,2022
+# Start time: 12:59:26 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/processador_ciclo_unico.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity processador_ciclo_unico
 # -- Compiling architecture comportamento of processador_ciclo_unico
-# End time: 17:45:16 on Jul 03,2022, Elapsed time: 0:00:00
+# End time: 12:59:26 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/pc.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:16 on Jul 03,2022
+# Start time: 12:59:26 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/pc.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity pc
 # -- Compiling architecture comportamental of pc
-# End time: 17:45:16 on Jul 03,2022, Elapsed time: 0:00:00
+# End time: 12:59:26 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/mux41.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:17 on Jul 03,2022
+# Start time: 12:59:26 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/mux41.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux41
 # -- Compiling architecture dataflow of mux41
-# End time: 17:45:17 on Jul 03,2022, Elapsed time: 0:00:00
+# End time: 12:59:27 on Jul 21,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/mux21.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:17 on Jul 03,2022
+# Start time: 12:59:27 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/mux21.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux21
 # -- Compiling architecture dataflow of mux21
-# End time: 17:45:17 on Jul 03,2022, Elapsed time: 0:00:00
+# End time: 12:59:27 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memi.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:17 on Jul 03,2022
+# Start time: 12:59:27 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memi.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -149,11 +149,11 @@
 # -- Compiling architecture comportamental of memi
 # ** Warning: C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memi.vhd(52): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
 # 
-# End time: 17:45:18 on Jul 03,2022, Elapsed time: 0:00:01
+# End time: 12:59:27 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memd.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:18 on Jul 03,2022
+# Start time: 12:59:27 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/memd.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -161,44 +161,44 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity memd
 # -- Compiling architecture rtl of memd
-# End time: 17:45:18 on Jul 03,2022, Elapsed time: 0:00:00
+# End time: 12:59:27 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/extensor.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:18 on Jul 03,2022
+# Start time: 12:59:27 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/extensor.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity extensor
 # -- Compiling architecture dataflow of extensor
-# End time: 17:45:19 on Jul 03,2022, Elapsed time: 0:00:01
+# End time: 12:59:27 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/digi_clk.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:19 on Jul 03,2022
+# Start time: 12:59:27 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/digi_clk.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity digi_clk
 # -- Compiling architecture Behavioral of digi_clk
-# End time: 17:45:19 on Jul 03,2022, Elapsed time: 0:00:00
+# End time: 12:59:27 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/barrel_shift_x2.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:19 on Jul 03,2022
+# Start time: 12:59:27 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/barrel_shift_x2.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity barrel_shift_x2
 # -- Compiling architecture dataflow of barrel_shift_x2
-# End time: 17:45:19 on Jul 03,2022, Elapsed time: 0:00:00
+# End time: 12:59:27 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/forwarding_unit.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:19 on Jul 03,2022
+# Start time: 12:59:27 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/forwarding_unit.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -206,12 +206,12 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity forwarding_unit
 # -- Compiling architecture comportamental of forwarding_unit
-# End time: 17:45:20 on Jul 03,2022, Elapsed time: 0:00:01
+# End time: 12:59:28 on Jul 21,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vcom -93 -work work {C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/tb_processador_ciclo_unico.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
-# Start time: 17:45:20 on Jul 03,2022
+# Start time: 12:59:28 on Jul 21,2022
 # vcom -reportprogress 300 -93 -work work C:/Users/Gabriel/Documents/GitHub/LAOC/pipeline/tb_processador_ciclo_unico.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -219,12 +219,12 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity tb_processador_ciclo_unico
 # -- Compiling architecture estimulos of tb_processador_ciclo_unico
-# End time: 17:45:20 on Jul 03,2022, Elapsed time: 0:00:00
+# End time: 12:59:28 on Jul 21,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  tb_processador_ciclo_unico
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" tb_processador_ciclo_unico 
-# Start time: 17:45:21 on Jul 03,2022
+# Start time: 12:59:28 on Jul 21,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -267,23 +267,24 @@
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 155 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 175 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+#    Time: 455 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 615 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 775 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 935 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+add wave -position insertpoint  \
+sim:/tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/instrucao \
+sim:/tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/pc_out
 add wave -position insertpoint  \
 sim:/tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/instancia_banco_registradores/banco
 add wave -position insertpoint  \
 sim:/tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/reg_A/saida_dados
 add wave -position insertpoint  \
 sim:/tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/reg_B/saida_dados
-add wave -position insertpoint  \
-sim:/tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/instrucao
-add wave -position insertpoint  \
-sim:/tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/pc_out
-add wave -position insertpoint  \
-sim:/tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/mux_for_A/sele_ent
-add wave -position insertpoint  \
-sim:/tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/mux_for_B/sele_ent
 restart
-run 1000ns
+run 2000ns
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/instancia_banco_registradores
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -297,6 +298,20 @@ run 1000ns
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 155 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 175 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
-# End time: 17:49:25 on Jul 03,2022, Elapsed time: 0:04:04
-# Errors: 0, Warnings: 14
+#    Time: 455 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 615 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 775 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 935 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1095 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1255 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1415 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1575 ns  Iteration: 2  Instance: /tb_processador_ciclo_unico/instancia/instancia_via_de_dados_ciclo_unico/data_mem
+# End time: 13:13:24 on Jul 21,2022, Elapsed time: 0:13:56
+# Errors: 0, Warnings: 24

@@ -28,12 +28,12 @@ architecture comportamental of memi is
 		variable tmp : memory_t := (others => (others => '0'));
 	begin 
 		tmp := (					-- exemplo de uma instrução qualquer de 16 bits (4 símbos em hexadecimal)
-				0     	=> X"4003", -- LI1 3 (instrucao Int En Configure)
+				0     	=> X"4003", -- LI1 3 (instrucao GPIO Interrupt Enable Configure)
 				1      	=> X"4900", -- LI2 256 (para << 8) 
 				2      	=> X"7480", -- MUL $9
 				3		=> X"40FF", -- LI1 3 (8 bits 1 seguindos)
 				4		=> X"5848",	-- LOP2 $9
-				5		=> X"8C80",	-- OR $9 (guarda 16 bits 1 em $9)
+				5		=> X"8C80",	-- OR $9 (guarda a instrução GPIO completa em $9)
 				6		=> X"0485", -- GPIO Command (habilita interrupcao de todo mundo)
 				
 				-- rotina de interrupção Overflow
